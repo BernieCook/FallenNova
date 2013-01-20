@@ -28,10 +28,8 @@ via Visual Studio's Extensions and Updates tool, or grab the [Fluent Generator i
 Tools, frameworks and languages currently employed: AutoMapper, ASP.NET MVC 4, Bootstrap, BCrypt.Net, C#, .NET4.5 Claims Based Identity, 
 ELMAH, Entity Framework, HTML 5, jQuery, glimpse, Modernizr, Ninject, nUnit, ReSharper, SQL 2008 R2, Web API and Visual Studio 2012.
 
-##Notes
+##Note
 As noted above this is still a work in progress so although it will compile and run there is still a lot of [sprinting](http://en.wikipedia.org/wiki/Scrum_(development%29#Sprint) to go.
-
-Licensed for usage under the [GNU Lesser General Public License, version 3.0 (LGPL-3.0)](http://www.opensource.org/licenses/lgpl-3.0.html).
 
 Enjoy.
 
