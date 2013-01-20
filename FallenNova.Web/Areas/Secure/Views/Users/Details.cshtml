@@ -1,0 +1,75 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.UsersModel.UserDetailsModel
+
+@{
+    ViewBag.Title = "User";
+}
+
+@Html.Partial("_UsersHeader")
+
+<h3>User Details</h3>
+
+<p>
+    Lots of user details.
+</p>
+
+<h4>General Details</h4>
+
+<ul>
+    <li>
+        User ID: @Model.UserId
+    </li>
+    <li>
+        FirstName: @Model.FirstName
+    </li>
+    <li>
+        Surname: @Model.Surname
+    </li>
+    <li>
+        Email address: 
+        @if (!string.IsNullOrWhiteSpace(Model.EmailAddress))
+        {
+            <a href="mailto:@Model.EmailAddress">@Model.EmailAddress</a>
+        }
+    </li>
+    <li>
+        Role(s): @Model.RoleTitles
+    </li>
+</ul>
+
+<h4>Characters</h4>
+
+@if (Model.Characters.Any())
+{
+    <table class="table table-bordered table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Corporation</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            @foreach (var item in Model.Characters) 
+            {
+                <tr>
+                    <td>@item.CharacterName</td>
+                    <td>@item.CorporationName</td>
+                </tr>
+            }  
+
+        </tbody>  
+    </table>
+}
+else
+{
+    <text>No characters exist for this user.</text>
+}
+
+<h4>Options</h4>
+
+@Html.ActionLink("Edit Details", "EditDetails", new { id = Model.UserId })
+@Html.ActionLink("Edit Status", "EditStatus", new { id = Model.UserId })
+
+<p>
+    <a href="/secure/users">Return</a>
+</p>

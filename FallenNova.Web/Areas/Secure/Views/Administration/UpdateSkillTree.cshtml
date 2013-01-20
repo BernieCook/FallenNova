@@ -1,0 +1,49 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.AdministrationModel.UpdateSkillTreeModel
+
+@{
+    ViewBag.Title = "Update Skill Tree";
+}
+
+@Html.Partial("_AdministrationHeader")
+
+<hgroup>
+    <h2>Update Skill Tree</h2>
+</hgroup>
+
+<p>
+    The EVElopedia <a href="http://wiki.eveonline.com/en/wiki/EVE_API_EVE_Skill_Tree">Skill Tree article</a> provides a link to <a href="https://api.eveonline.com/eve/SkillTree.xml.aspx">download the official Eve Online skill tree</a>.<br/>
+    <br/>
+    Once downloaded copy/paste it into the field below then submit it for processing.
+</p>
+
+@Bootstrap.Validation("Your update was unsuccessful. Please correct the errors listed and try again.", ViewData.ModelState)
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "Administration"))
+{ 
+    <div class="control-group">
+        @Html.LabelFor(m => m.Xml, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextAreaFor(m => m.Xml, new { @rows = "10", @class = "input-xxlarge" })
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <input id="loadingText" type="submit" value="Update Skill Tree" data-loading-text="Updating Skill Tree..." class="btn btn-primary" />
+            <a href="@Url.Action("Index", "Administration", new { Area = "Secure" })" class="btn">Cancel</a>
+        </div>
+    </div>
+}
+
+@section Scripts
+{
+    <script type="text/javascript">
+    //<![CDATA[
+        
+        $('#loadingText').on('click', function () {
+            $(this).button('loading');
+            $('.btn').addClass('disabled');
+        });
+        
+    //]]>
+    </script>
+}

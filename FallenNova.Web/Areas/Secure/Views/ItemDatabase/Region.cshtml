@@ -1,0 +1,41 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.ItemDatabaseModel.RegionModel
+
+@using FallenNova.Web.Constants
+
+@{
+    ViewBag.Title = @Model.Name;
+}
+
+@Html.Partial("_ItemDatabaseHeader")
+
+<hgroup>
+    <h3>Region</h3>
+
+    <h4>@Model.Name</h4>
+</hgroup>
+
+<p>
+    The space of New Eden is divided into political regions, the ownership of which varies from empires to pirates to nonclaimed territories. 
+    The latter are often viciously fought over by capsuleers, who have all of the cunning of pirates and none of the moral restraints.
+</p>
+
+<p>
+    Constellations:<br />
+    
+    @foreach (var item in Model.Constellations) 
+    {
+        <h5>@Html.ActionLink(item.Name, "Constellation", "ItemDatabase", new { id = item.Id, Area = "Secure" }, null)</h5>
+        
+        @: Solar Systems:<br />
+        <br />
+    
+        foreach (var solarSystem in item.SolarSystems) 
+        {
+            @Html.ActionLink(solarSystem.Name, "SolarSystem", "ItemDatabase", new { id = solarSystem.Id, Area = "Secure" }, null)
+            @: Security: @solarSystem.Security.ToString(Format.Security)
+            <br />
+        }
+    }
+</p>
+
+

@@ -1,0 +1,42 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.UsersModel.AddUserSuccessfulModel
+
+@{
+    ViewBag.Title = "Add User Successful";
+}
+
+@Html.Partial("_UsersHeader")
+
+<hgroup>
+    <h3>Add User</h3>
+
+    <h4>Successful</h4>
+</hgroup>
+
+<p>
+    The new user was successfully added.
+</p>
+
+<p>
+    @if (!string.IsNullOrWhiteSpace(Model.EmailAddress))
+    {
+        <text>
+            An email has been sent to <b>@Model.FirstNameWithApostrope</b> email address: <b>@Model.EmailAddress</b> informing them to verify their newly created account. 
+            Verification = sign in'ification.
+        </text>
+    }
+    else
+    {
+        <text>
+            <b>@Model.FirstName</b> wasn't sent a confirmation because no email address was entered for their account. 
+            You can add an email address and send them a verification email at a later date if you wish.
+        </text>
+    }
+</p>
+
+<p>
+    You have a few options available, you can 
+    @Html.ActionLink("edit/view the user's details", "Details", new { id = Model.UserId }),
+    @Html.ActionLink("add another user", "Add", "Users") or return to the 
+    @Html.ActionLink("User home page", "Index", "Users") page.
+</p>
+

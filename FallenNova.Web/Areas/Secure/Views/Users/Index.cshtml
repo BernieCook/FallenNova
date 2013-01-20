@@ -1,0 +1,44 @@
+﻿@model IEnumerable<FallenNova.Web.Areas.Secure.Models.UsersModel.UsersModel>
+
+@using FallenNova.Web.Areas.Shared.Models
+
+@{
+    ViewBag.Title = "Users";
+}
+
+@Html.Partial("_UsersHeader")
+
+@if (ViewBag.PagingInfo.TotalResults > 0)
+{
+    @Html.Partial("_GridHeaderPartial", (PagingInfo)ViewBag.PagingInfo)
+    
+    <table class="table table-bordered table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>@Html.RouteLink("First Name", "Secure.Data", new { pageIndex = 1, pageSize = ViewBag.PagingInfo.PageSize, sortBy = "FirstName", sortAscending = ViewBag.FirstNameSortAscending })</th>
+                <th>@Html.RouteLink("Surname", "Secure.Data", new { pageIndex = 1, pageSize = ViewBag.PagingInfo.PageSize, sortBy = "Surname", sortAscending = ViewBag.SurnameSortAscending })</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            @foreach (var item in Model) 
+            {
+                <tr>
+                    <td>@item.UserId</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.Surname</td>
+                    <td>@Html.ActionLink("Edit/View Details", "Details", new { id = item.UserId })</td>
+                </tr>
+            }  
+
+        </tbody>  
+    </table>
+
+    @Html.Partial("_GridFooterPartial", (PagingInfo)ViewBag.PagingInfo)
+}
+else
+{
+    <text>No users found</text>
+}

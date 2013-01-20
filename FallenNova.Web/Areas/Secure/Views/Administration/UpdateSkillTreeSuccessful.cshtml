@@ -1,0 +1,24 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.UsersModel.AddUserSuccessfulModel
+
+@{
+    ViewBag.Title = "Update Skill Tree Successful";
+}
+
+@Html.Partial("_AdministrationHeader")
+
+<hgroup>
+    <h2>Update Skill Tree</h2>
+
+    <h3>Successful</h3>
+</hgroup>
+
+<p>
+    <a href="http://en.wikipedia.org/wiki/WOPR" title="View information about WOPR at Wikipedia" target="_blank"><abbr title="War Operation Plan Response">WOPR</abbr></a> has successfully finished processing the skill tree data.
+</p>
+
+<p>
+    You have two, tiny, wafer-thin options available; 
+    @Html.ActionLink("browse the skill tree", "SkillTree", "Administration"), or return to the 
+    @Html.ActionLink("Administration home page", "Index", "Administration").
+</p>
+

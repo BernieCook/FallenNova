@@ -1,0 +1,52 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.UsersModel.AddUserModel
+
+@{
+    ViewBag.Title = "Add User";
+}
+
+@Html.Partial("_UsersHeader")
+
+<h3>Add User</h3>
+
+<p>
+    Once added the new user will be sent an email asking them to enter a password of their choosing before signing in.<br />
+    <br />
+    It's up to the user to add their character(s) once signed in.
+</p>
+
+@Bootstrap.Validation("The user wasn't added successfully. Please correct the errors listed and try again.", ViewData.ModelState)
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "Users")) 
+{
+    <div class="control-group">
+        @Html.LabelFor(m => m.FirstName, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "input-xlarge" })
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(m => m.Surname, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(m => m.Surname, new { @class = "input-xlarge" })
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(m => m.EmailAddress, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(m => m.EmailAddress, new { @type = "email", @class = "input-xlarge" })
+        </div>
+    </div>
+    <label class="radio">
+        @Html.RadioButtonWithLabelFor(m => m.RoleId, 1, "Member")
+    </label>
+    <label class="radio">
+        @Html.RadioButtonWithLabelFor(m => m.RoleId, 2, "Administrator")
+    </label>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn btn-primary">Add User</button>
+            <a href="@Url.Action("Index", "Users", new { Area = "Secure" })" class="btn">Cancel</a>
+        </div>
+    </div>
+}
+

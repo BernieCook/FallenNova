@@ -1,0 +1,20 @@
+﻿namespace FallenNova.DomainModel
+{
+    /// <summary>
+    /// User status enumeration.
+    /// </summary>
+    /// <remarks>
+    /// Because this solution employs EF Database First, and I didn't wanted to manually edit my Entity Data Model (.edmx) so as to 
+    /// avoid issues when updating the model from the database, so I have manually added the following enumeration.
+    /// </remarks>
+    public partial class UserStatus
+    {
+        public enum Statuses
+        {
+            Active = 1,
+            Disabled = 2,
+            Deleted = 3
+        }
+
+    }
+}

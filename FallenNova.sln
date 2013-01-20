@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FallenNova.Web", "FallenNova.Web\FallenNova.Web.csproj", "{F8F09D06-256E-4079-B866-BB61EBC81E88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FallenNova.DomainModel", "FallenNova.DomainModel\FallenNova.DomainModel.csproj", "{FDD8FDA4-BD6C-47EB-908F-228CC9618AE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FallenNova.Service", "FallenNova.Service\FallenNova.Service.csproj", "{08294E28-A636-41FE-867F-444772FA076A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FallenNova.Shared", "FallenNova.Shared\FallenNova.Shared.csproj", "{76C902B6-C5D0-4648-9443-B9F4EBAE30EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FallenNova.Repository", "FallenNova.Repository\FallenNova.Repository.csproj", "{1EF917C4-A098-45ED-BCCE-E4F2D1CDFBC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Resources", "Solution Resources", "{BA6BA349-1AB0-4FA5-BD39-A71DDC319EFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{A6EF98A8-98E0-4E29-BC6A-B99AD62159F7}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Resources\Database\1. Create Fallen Nova Database.sql = Solution Resources\Database\1. Create Fallen Nova Database.sql
+		Solution Resources\Database\3. Copy Eve Online Data.sql = Solution Resources\Database\3. Copy Eve Online Data.sql
+		Solution Resources\Database\4. Insert Base Data.sql = Solution Resources\Database\4. Insert Base Data.sql
+		Solution Resources\Database\README.txt = Solution Resources\Database\README.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EveOnline", "EveOnline", "{518BB277-D5DB-4589-9AF3-F9C5027B1228}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Resources\EveOnline\SkillTree.xml = Solution Resources\EveOnline\SkillTree.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ELMAH", "ELMAH", "{90E112C5-D45E-4304-86EE-238C12A2C960}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Resources\ELMAH\ELMAH-1.2-db-SQLServer.sql = Solution Resources\ELMAH\ELMAH-1.2-db-SQLServer.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Git", "Git", "{D775498D-3A7A-4FB2-9FF9-3772B5D73376}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FallenNova.Test", "FallenNova.Test\FallenNova.Test.csproj", "{359533AA-F482-48DA-B0C3-6BA3291859D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8F09D06-256E-4079-B866-BB61EBC81E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F09D06-256E-4079-B866-BB61EBC81E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F09D06-256E-4079-B866-BB61EBC81E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F09D06-256E-4079-B866-BB61EBC81E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDD8FDA4-BD6C-47EB-908F-228CC9618AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD8FDA4-BD6C-47EB-908F-228CC9618AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD8FDA4-BD6C-47EB-908F-228CC9618AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD8FDA4-BD6C-47EB-908F-228CC9618AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08294E28-A636-41FE-867F-444772FA076A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08294E28-A636-41FE-867F-444772FA076A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08294E28-A636-41FE-867F-444772FA076A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08294E28-A636-41FE-867F-444772FA076A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76C902B6-C5D0-4648-9443-B9F4EBAE30EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C902B6-C5D0-4648-9443-B9F4EBAE30EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C902B6-C5D0-4648-9443-B9F4EBAE30EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C902B6-C5D0-4648-9443-B9F4EBAE30EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EF917C4-A098-45ED-BCCE-E4F2D1CDFBC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EF917C4-A098-45ED-BCCE-E4F2D1CDFBC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EF917C4-A098-45ED-BCCE-E4F2D1CDFBC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EF917C4-A098-45ED-BCCE-E4F2D1CDFBC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{359533AA-F482-48DA-B0C3-6BA3291859D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{359533AA-F482-48DA-B0C3-6BA3291859D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{359533AA-F482-48DA-B0C3-6BA3291859D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{359533AA-F482-48DA-B0C3-6BA3291859D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A6EF98A8-98E0-4E29-BC6A-B99AD62159F7} = {BA6BA349-1AB0-4FA5-BD39-A71DDC319EFE}
+		{518BB277-D5DB-4589-9AF3-F9C5027B1228} = {BA6BA349-1AB0-4FA5-BD39-A71DDC319EFE}
+		{90E112C5-D45E-4304-86EE-238C12A2C960} = {BA6BA349-1AB0-4FA5-BD39-A71DDC319EFE}
+		{D775498D-3A7A-4FB2-9FF9-3772B5D73376} = {BA6BA349-1AB0-4FA5-BD39-A71DDC319EFE}
+	EndGlobalSection
+EndGlobal

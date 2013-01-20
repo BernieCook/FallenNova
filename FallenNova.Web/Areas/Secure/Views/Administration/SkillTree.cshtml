@@ -1,0 +1,92 @@
+﻿@model IEnumerable<FallenNova.Web.Areas.Secure.Models.AdministrationModel.SkillTreeModel>
+
+@{
+    ViewBag.Title = "Skill Tree";
+}
+
+@Html.Partial("_AdministrationHeader")
+
+<h2>Skill Tree</h2>
+
+<p>
+    Skills are organised into groups.
+</p>
+
+@if (ViewBag.TotalResults > 0)
+{
+    <table class="table table-bordered table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+
+            @foreach (var skillGroup in Model) 
+            {
+                <tbody>
+                    <tr>
+                        <td>@skillGroup.Id</td>
+                        <td>@skillGroup.Name</td>
+                        <td id="@skillGroup.Id"><a href="?@skillGroup.Name">Show</a></td>
+                    </tr>
+                </tbody>  
+                <tbody id="sgtb_@skillGroup.Id">
+                
+                    @foreach (var skill in skillGroup.Skills)
+                    {
+                        <tr>
+                            <td>@skill.Id</td>
+                            <td>@Html.ActionLink(skill.Name, "Skill", new { id = skill.Id })</td>
+                            <td>@Html.ActionLink("View Details", "Skill", new { id = skill.Id })</td>
+                        </tr>
+                    }
+
+                </tbody>  
+            }  
+            
+    </table>
+}
+else
+{
+    <text>No skills found. <abbr title="War Operation Plan Response">WOPR</abbr> recommends you @Html.ActionLink("upload some new skills", "UpdateSkillTree", "Administration")</text>
+}
+
+@section Scripts
+{
+    <script type="text/javascript">
+        //<![CDATA[
+
+        @* TODO: Needs some work. *@
+
+        $(document).ready(function() {
+            $('#Grid > tbody tr td[id]').click(function() {
+                HideShowSkillGroup($(this).attr('id'));
+            });
+
+            $('#Grid > tbody tr td[id] a').click(function(e) {
+                e.preventDefault();
+            });
+
+            $('#Grid > tbody tr td[id]').each(function() {
+                $('#sgtb_' + $(this).attr('id')).hide();
+            });
+        });
+
+        function HideShowSkillGroup(skillGroupId) {
+            var aSelector = '#' + skillGroupId + " a";
+            var tbodySelector = '#sgtb_' + skillGroupId;
+
+            if ($(tbodySelector).is(":visible")) {
+                $(tbodySelector).hide();
+                $(aSelector).html('Show');
+            } else {
+                $(tbodySelector).show();
+                $(aSelector).html('Hide');
+            }
+        }
+
+    //]]>
+    </script>
+}

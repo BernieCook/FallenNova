@@ -1,0 +1,38 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.ItemDatabaseModel.ConstellationModel
+
+@using FallenNova.Web.Constants
+
+@{
+    ViewBag.Title = @Model.Name;
+}
+
+@Html.Partial("_ItemDatabaseHeader")
+
+<hgroup>
+    <h3>Constellation</h3>
+
+    <h4>@Model.Name</h4>
+</hgroup>
+
+<p>
+    Constellations are collections of stars.<br />
+    <br />
+    Humanity finds patterns in the strangest things, and stars are no exception - not even after we have traveled into space and seen them with our bare eyes. 
+    The thousands of solar systems that exist in New Eden are grouped into constellations whose members often bear the same political mark.
+</p>
+
+<p>
+    Solar Systems:<br />
+    
+    @foreach (var item in Model.SolarSystems) 
+    {
+        @Html.ActionLink(item.Name, "SolarSystem", "ItemDatabase", new { id = item.Id, Area = "Secure" }, null)
+        @: (Security: @item.Security.ToString(Format.Security))
+        <br />
+    }
+    <br />
+
+    Region: @Html.ActionLink(Model.RegionName, "Region", "ItemDatabase", new { id = Model.RegionId, Area = "Secure" }, null)
+</p>
+
+

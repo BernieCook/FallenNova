@@ -1,0 +1,31 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.CorpModel.AddMemberModel
+
+@{
+    ViewBag.Title = "Add Member";
+}
+
+@Html.Partial("_CorpHeader")
+
+<h3>Add Member</h3>
+
+<p>
+    <span class="label label-info">Heads up!</span> Need to correct the minor issue with updating a user and not their role. 
+</p>
+
+@Bootstrap.Validation("The addition of a new member was unsuccessful. Please correct the errors listed and try again.", ViewData.ModelState)
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "Corp")) 
+{
+    <div class="control-group">
+        @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(m => m.Name, new { @class = "input-xlarge" })
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn btn-primary">Add Member</button>
+            <a href="@Url.Action("Index", "Corp", new { Area = "Secure" })" class="btn">Cancel</a>
+        </div>
+    </div>
+}

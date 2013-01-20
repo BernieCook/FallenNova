@@ -1,0 +1,31 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.AdministrationModel.NinjectTestResultsModel
+
+@{
+    ViewBag.Title = "Ninject";
+}
+
+@Html.Partial("_AdministrationHeader")
+
+<h3>Ninject</h3>
+
+<p>
+    This makes two calls to one service and one to another. The following should happen:
+</p>
+
+<ul>
+    <li>One database contact shared across all calls</li>
+    <li>One unit of work commit per service call</li>
+    <li>One call to each service's constructor</li>
+</ul>
+
+<p>
+    This test ensures the Ninject configuration has been setup correctly.
+</p>
+
+<h4>Test Results</h4>
+
+Status: @Model.Status
+<br/>
+Start: @Model.StartTime.ToString("mm:ss")
+<br/>
+End: @Model.EndTime.ToString("mm:ss")

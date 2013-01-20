@@ -1,0 +1,20 @@
+﻿<header>
+    <div class="row">
+        <div class="span6">
+            <h2>
+                <i class="icon-large user"></i> My Space
+            </h2>
+        </div>
+        <div class="span6">
+            <div class="btn-group pull-right">
+                <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-tasks icon-white"></i> Options <span class="caret"></span></button>
+                <ul class="dropdown-menu pull-right">
+                    <li><a href="@Url.Action("EditDetails", "MySpace", new { Area = "Secure" })"><i class="icon-edit"></i> Edit My Details</a></li>
+                    <li><a href="@Url.Action("EditPassword", "MySpace", new { Area = "Secure" })"><i class="icon-edit"></i> Edit My Password</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<hr />

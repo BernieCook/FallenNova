@@ -1,0 +1,47 @@
+@model FallenNova.Web.Areas.Public.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@* Maxlength is manually set on several fields on this page as it's public facing. *@
+
+<header>
+    <h2>
+        Login
+    </h2>
+</header>
+
+<hr/>
+
+<p>
+    Log into the Fallen Nova website by entering your email address and password below.
+</p>
+
+@Bootstrap.Validation("An error occurred when submitting your message. Please correct the errors listed and try again.", ViewData.ModelState)
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+   
+    <div class="control-group">
+        @Html.LabelFor(m => m.EmailAddress, new { @class = "control-label" })
+        <div class="controls">
+            @* Maxlength is manually set as this is a public facing page. *@
+            @Html.TextBoxFor(m => m.EmailAddress, new { @type = "email", @class = "input-xlarge", @placeholder = "Email", maxlength = "200" })
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+        <div class="controls">
+            @Html.PasswordFor(m => m.Password, new { @class = "input-xlarge", @placeholder = "Password", maxlength = "50" })
+        </div>
+        <div class="controls">
+            <label class="checkbox">
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe)
+            </label>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </div>
+}

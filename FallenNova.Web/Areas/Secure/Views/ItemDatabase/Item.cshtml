@@ -1,0 +1,20 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.ItemDatabaseModel.ItemModel
+
+@{
+    ViewBag.Title = @Model.Name;
+}
+
+@Html.Partial("_ItemDatabaseHeader")
+
+<hgroup>
+    <h3>Item</h3>
+
+    <h4>@Model.Name</h4>
+</hgroup>
+
+<p>
+    Name: @Model.Name<br />
+    Description: @Model.Description
+</p>
+
+

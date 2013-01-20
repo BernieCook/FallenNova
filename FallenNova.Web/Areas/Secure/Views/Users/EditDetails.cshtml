@@ -1,0 +1,55 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.UsersModel.EditDetailsUserModel
+
+@{
+    ViewBag.Title = "Edit User Details";
+}
+
+@Html.Partial("_UsersHeader")
+
+<h3>Edit User's Details</h3>
+
+<p>
+    Edit away.
+</p>
+
+@Bootstrap.Validation("The user's details weren't updated successfully. Please correct the errors listed and try again.", ViewData.ModelState)
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "Users")) 
+{
+    <div class="control-group">
+        @Html.LabelFor(m => m.FirstName, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "input-xlarge" })
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(m => m.Surname, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(m => m.Surname, new { @class = "input-xlarge" })
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(m => m.EmailAddress, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(m => m.EmailAddress, new { @type = "email", @class = "input-xlarge" })
+        </div>
+    </div>
+    <div class="control-group">
+        Role:
+        <div class="controls">
+            <label class="radio">
+                @Html.RadioButtonWithLabelFor(m => m.RoleId, 1, "Member")
+            </label>
+            <label class="radio">
+                @Html.RadioButtonWithLabelFor(m => m.RoleId, 2, "Administrator")
+            </label> 
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn btn-primary">Edit User's Details</button>
+            <a href="@Html.ActionLink("Cancel", "Details", new { id = Model.UserId })" class="btn">Cancel</a>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDD8FDA4-BD6C-47EB-908F-228CC9618AE9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FallenNova.DomainModel</RootNamespace>
+    <AssemblyName>FallenNova.DomainModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0-alpha2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0-alpha2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\Statuses.cs" />
+    <Compile Include="Entities\UserLogType.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="EntityDataModel\Character.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\CharacterEveOnlineSkill.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\ContactUsLog.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\Corporation.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineAttribute.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineBloodline.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineCategory.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineConstellation.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineFaction.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineGroup.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineIcon.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineMarketGroup.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineRace.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineRegion.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineRequiredSkill.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineSkill.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineSkillGroup.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineSkillTree.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineSolarSystem.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\EveOnlineType.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\FallenNova.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FallenNova.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\FallenNova.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\FallenNova.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FallenNova.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\KillLog.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\KillLogAttacker.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\KillLogItem.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\Role.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\User.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\UserLog.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\UserLogType.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\UserRole.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDataModel\UserStatus.cs">
+      <DependentUpon>FallenNova.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FallenNovaContext.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="EntityDataModel\FallenNova.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FallenNova.Context.cs</LastGenOutput>
+      <CustomToolNamespace>FallenNova.DomainModel</CustomToolNamespace>
+    </None>
+    <EntityDeploy Include="EntityDataModel\FallenNova.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FallenNova.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>FallenNova.DomainModel</CustomToolNamespace>
+    </EntityDeploy>
+    <None Include="EntityDataModel\FallenNova.edmx.diagram">
+      <DependentUpon>FallenNova.edmx</DependentUpon>
+    </None>
+    <None Include="EntityDataModel\FallenNova.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FallenNova.cs</LastGenOutput>
+      <CustomToolNamespace>FallenNova.DomainModel</CustomToolNamespace>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

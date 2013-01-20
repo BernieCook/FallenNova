@@ -1,0 +1,23 @@
+﻿<header>
+    <div class="row">
+        <div class="span6">
+            <h2>
+                <i class="icon-large wrench"></i> Administration
+            </h2>
+        </div>
+        <div class="span6">
+            <div class="btn-group pull-right">
+                <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-tasks icon-white"></i> Options <span class="caret"></span></button>
+                <ul class="dropdown-menu pull-right">
+                    <li class="nav-header">Skills</li>
+                    <li><a href="@Url.Action("UpdateSkillTree", "Administration", new { Area = "Secure" })"><i class="icon-th-large"></i> Update the Skill Tree</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Diagnostics</li>
+                    <li><a href="@Url.Action("Ninject", "Administration", new { Area = "Secure" })"><i class="icon-link"></i> Ninject</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<hr />

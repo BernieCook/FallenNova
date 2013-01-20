@@ -1,0 +1,58 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.AdministrationModel.SkillModel
+
+@{
+    ViewBag.Title = @Model.Name;
+}
+
+@Html.Partial("_AdministrationHeader")
+
+<hgroup>
+    <h2>Skill</h2>
+    
+    <h3>@Model.Name</h3>
+</hgroup>
+
+<p>
+    Name: @Model.Name<br />
+    Description: @Model.Description<br />
+    Rank: @Model.Rank
+</p>
+
+<h5>Skill Group</h5>
+
+<p>
+    @Html.ActionLink(Model.EveOnlineSkillGroupName, "SkillGroup", new { id = Model.EveOnlineSkillGroupId })
+</p>
+
+<h5>Attributes</h5>
+
+<p>
+    Primary: @Model.PrimaryEveOnlineAttributeName<br />
+    Secondary: @Model.SecondaryEveOnlineAttributeName
+</p>
+
+<h5>Required Skills</h5>
+
+@foreach (var requiredSkill in Model.RequiredSkills)
+{
+    @RenderRow(requiredSkill, 0)
+}
+
+@helper RenderRow(
+    FallenNova.Web.Areas.Secure.Models.AdministrationModel.SkillModel.Skill requiredSkill,
+    int nestDepth)
+{
+    for (int i = 0; i < nestDepth; i++)
+    {
+        <text>&nbsp;&nbsp;</text>
+    }
+
+    @Html.ActionLink(requiredSkill.Name, "Skill", new { id = requiredSkill.Id })<text>, Level</text>
+    @requiredSkill.Level
+    <br/>
+    
+    foreach (var childRequiredSkill in requiredSkill.RequiredSkills)
+    {
+        @RenderRow(childRequiredSkill, nestDepth++)
+    } 
+}

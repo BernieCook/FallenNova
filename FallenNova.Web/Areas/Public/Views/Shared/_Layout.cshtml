@@ -1,0 +1,38 @@
+@using System.Web.Mvc.Html
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>@Helper.FormatTitle(@ViewBag.Title)</title>
+        @Html.Partial("_Meta")
+        
+        @* The CSS rendering must come before Modernizr to avoid Flash of Unstyled Content (FOUC). *@
+        @Styles.Render("~/assets/css")
+        @Scripts.Render("~/assets/modernizr")
+        
+        @Html.Partial("_Icons")
+        
+    </head>
+    <body>
+        
+        @Html.Partial("_Header")
+        
+        <div class="container">
+            
+            <section>
+                @RenderBody()
+            </section>
+               
+            @Html.Partial("_Footer")
+        
+        </div>
+        
+        @Scripts.Render("~/assets/jquery")
+        @Scripts.Render("~/assets/public")
+        
+        @RenderSection("Scripts", required: false)
+
+    </body>
+</html>

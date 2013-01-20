@@ -1,0 +1,2290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FallenNovaDevelopmentModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="FallenNovaDevelopmentModelStoreContainer">
+          <EntitySet Name="Character" EntityType="FallenNovaDevelopmentModel.Store.Character" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CharacterEveOnlineSkill" EntityType="FallenNovaDevelopmentModel.Store.CharacterEveOnlineSkill" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContactUsLog" EntityType="FallenNovaDevelopmentModel.Store.ContactUsLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Corporation" EntityType="FallenNovaDevelopmentModel.Store.Corporation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineAttribute" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineAttribute" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineBloodline" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineBloodline" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineCategory" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineConstellation" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineConstellation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineFaction" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineFaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineGroup" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineIcon" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineIcon" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineMarketGroup" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineMarketGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineRace" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineRace" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineRegion" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineRegion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineRequiredSkill" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineRequiredSkill" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineSkill" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineSkill" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineSkillGroup" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineSkillGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineSkillTree" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineSkillTree" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineSolarSystem" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineSolarSystem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EveOnlineType" EntityType="FallenNovaDevelopmentModel.Store.EveOnlineType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KillLog" EntityType="FallenNovaDevelopmentModel.Store.KillLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KillLogAttacker" EntityType="FallenNovaDevelopmentModel.Store.KillLogAttacker" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KillLogItem" EntityType="FallenNovaDevelopmentModel.Store.KillLogItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="FallenNovaDevelopmentModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="FallenNovaDevelopmentModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserLog" EntityType="FallenNovaDevelopmentModel.Store.UserLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserLogType" EntityType="FallenNovaDevelopmentModel.Store.UserLogType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserRole" EntityType="FallenNovaDevelopmentModel.Store.UserRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserStatus" EntityType="FallenNovaDevelopmentModel.Store.UserStatus" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Character_Corporation" Association="FallenNovaDevelopmentModel.Store.FK_Character_Corporation">
+            <End Role="Corporation" EntitySet="Corporation" />
+            <End Role="Character" EntitySet="Character" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Character_User" Association="FallenNovaDevelopmentModel.Store.FK_Character_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Character" EntitySet="Character" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CharacterEveOnlineSkill_Character" Association="FallenNovaDevelopmentModel.Store.FK_CharacterEveOnlineSkill_Character">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="CharacterEveOnlineSkill" EntitySet="CharacterEveOnlineSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CharacterEveOnlineSkill_EveOnlineSkill" Association="FallenNovaDevelopmentModel.Store.FK_CharacterEveOnlineSkill_EveOnlineSkill">
+            <End Role="EveOnlineSkill" EntitySet="EveOnlineSkill" />
+            <End Role="CharacterEveOnlineSkill" EntitySet="CharacterEveOnlineSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContactUsLog_User" Association="FallenNovaDevelopmentModel.Store.FK_ContactUsLog_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ContactUsLog" EntitySet="ContactUsLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineAttribute_EveOnlineIcon" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineAttribute_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcon" />
+            <End Role="EveOnlineAttribute" EntitySet="EveOnlineAttribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineBloodline_EveOnlineIcon" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineBloodline_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcon" />
+            <End Role="EveOnlineBloodline" EntitySet="EveOnlineBloodline" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineBloodline_EveOnlineRace" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineBloodline_EveOnlineRace">
+            <End Role="EveOnlineRace" EntitySet="EveOnlineRace" />
+            <End Role="EveOnlineBloodline" EntitySet="EveOnlineBloodline" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineCategory_EveOnlineIcon" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineCategory_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcon" />
+            <End Role="EveOnlineCategory" EntitySet="EveOnlineCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineConstellation_EveOnlineRegion" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineConstellation_EveOnlineRegion">
+            <End Role="EveOnlineRegion" EntitySet="EveOnlineRegion" />
+            <End Role="EveOnlineConstellation" EntitySet="EveOnlineConstellation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineFaction_EveOnlineIcon" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineFaction_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcon" />
+            <End Role="EveOnlineFaction" EntitySet="EveOnlineFaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineGroup_EveOnlineCategory" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineGroup_EveOnlineCategory">
+            <End Role="EveOnlineCategory" EntitySet="EveOnlineCategory" />
+            <End Role="EveOnlineGroup" EntitySet="EveOnlineGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineGroup_EveOnlineIcon" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineGroup_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcon" />
+            <End Role="EveOnlineGroup" EntitySet="EveOnlineGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineMarketGroup_EveOnlineIcon" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineMarketGroup_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcon" />
+            <End Role="EveOnlineMarketGroup" EntitySet="EveOnlineMarketGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineMarketGroup_EveOnlineMarketGroup" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineMarketGroup_EveOnlineMarketGroup">
+            <End Role="EveOnlineMarketGroup" EntitySet="EveOnlineMarketGroup" />
+            <End Role="EveOnlineMarketGroup1" EntitySet="EveOnlineMarketGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineRace_EveOnlineIcon" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineRace_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcon" />
+            <End Role="EveOnlineRace" EntitySet="EveOnlineRace" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineRegion_EveOnlineFaction" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineRegion_EveOnlineFaction">
+            <End Role="EveOnlineFaction" EntitySet="EveOnlineFaction" />
+            <End Role="EveOnlineRegion" EntitySet="EveOnlineRegion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineRequiredSkill_1_EveOnlineSkill" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineRequiredSkill_1_EveOnlineSkill">
+            <End Role="EveOnlineSkill" EntitySet="EveOnlineSkill" />
+            <End Role="EveOnlineRequiredSkill" EntitySet="EveOnlineRequiredSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineRequiredSkill_2_RequiredEveOnlineSkill" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineRequiredSkill_2_RequiredEveOnlineSkill">
+            <End Role="EveOnlineSkill" EntitySet="EveOnlineSkill" />
+            <End Role="EveOnlineRequiredSkill" EntitySet="EveOnlineRequiredSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineSkill_1_PrimaryEveOnlineAttribute" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineSkill_1_PrimaryEveOnlineAttribute">
+            <End Role="EveOnlineAttribute" EntitySet="EveOnlineAttribute" />
+            <End Role="EveOnlineSkill" EntitySet="EveOnlineSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineSkill_2_SecondaryEveOnlineAttribute" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineSkill_2_SecondaryEveOnlineAttribute">
+            <End Role="EveOnlineAttribute" EntitySet="EveOnlineAttribute" />
+            <End Role="EveOnlineSkill" EntitySet="EveOnlineSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineSkill_EveOnlineSkillGroup" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineSkill_EveOnlineSkillGroup">
+            <End Role="EveOnlineSkillGroup" EntitySet="EveOnlineSkillGroup" />
+            <End Role="EveOnlineSkill" EntitySet="EveOnlineSkill" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineSkillTree_User" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineSkillTree_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="EveOnlineSkillTree" EntitySet="EveOnlineSkillTree" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineSolarSystem_EveOnlineConstellation" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineSolarSystem_EveOnlineConstellation">
+            <End Role="EveOnlineConstellation" EntitySet="EveOnlineConstellation" />
+            <End Role="EveOnlineSolarSystem" EntitySet="EveOnlineSolarSystem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineType_EveOnlineGroup" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineType_EveOnlineGroup">
+            <End Role="EveOnlineGroup" EntitySet="EveOnlineGroup" />
+            <End Role="EveOnlineType" EntitySet="EveOnlineType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineType_EveOnlineIcon" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineType_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcon" />
+            <End Role="EveOnlineType" EntitySet="EveOnlineType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineType_EveOnlineMarketGroup" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineType_EveOnlineMarketGroup">
+            <End Role="EveOnlineMarketGroup" EntitySet="EveOnlineMarketGroup" />
+            <End Role="EveOnlineType" EntitySet="EveOnlineType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineType_EveOnlineRace" Association="FallenNovaDevelopmentModel.Store.FK_EveOnlineType_EveOnlineRace">
+            <End Role="EveOnlineRace" EntitySet="EveOnlineRace" />
+            <End Role="EveOnlineType" EntitySet="EveOnlineType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KillLog_Character" Association="FallenNovaDevelopmentModel.Store.FK_KillLog_Character">
+            <End Role="Character" EntitySet="Character" />
+            <End Role="KillLog" EntitySet="KillLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KillLogAttacker_KillLog" Association="FallenNovaDevelopmentModel.Store.FK_KillLogAttacker_KillLog">
+            <End Role="KillLog" EntitySet="KillLog" />
+            <End Role="KillLogAttacker" EntitySet="KillLogAttacker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KillLogItem_KillLog" Association="FallenNovaDevelopmentModel.Store.FK_KillLogItem_KillLog">
+            <End Role="KillLog" EntitySet="KillLog" />
+            <End Role="KillLogItem" EntitySet="KillLogItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_1_AddedByUser" Association="FallenNovaDevelopmentModel.Store.FK_User_1_AddedByUser">
+            <End Role="User" EntitySet="User" />
+            <End Role="User1" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_2_ModifiedByUser" Association="FallenNovaDevelopmentModel.Store.FK_User_2_ModifiedByUser">
+            <End Role="User" EntitySet="User" />
+            <End Role="User1" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLog_1_User" Association="FallenNovaDevelopmentModel.Store.FK_UserLog_1_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserLog" EntitySet="UserLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLog_2_ActionAgainstUser" Association="FallenNovaDevelopmentModel.Store.FK_UserLog_2_ActionAgainstUser">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserLog" EntitySet="UserLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLog_UserLogType" Association="FallenNovaDevelopmentModel.Store.FK_UserLog_UserLogType">
+            <End Role="UserLogType" EntitySet="UserLogType" />
+            <End Role="UserLog" EntitySet="UserLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_Role" Association="FallenNovaDevelopmentModel.Store.FK_UserRole_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_User" Association="FallenNovaDevelopmentModel.Store.FK_UserRole_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserRole" EntitySet="UserRole" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Character">
+          <Key>
+            <PropertyRef Name="CharacterId" />
+          </Key>
+          <Property Name="CharacterId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CorporationId" Type="int" Nullable="false" />
+          <Property Name="KeyId" Type="int" Nullable="false" />
+          <Property Name="VCode" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="CharacterName" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="AddedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="Timestamp" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="CharacterEveOnlineSkill">
+          <Key>
+            <PropertyRef Name="CharacterSkillId" />
+          </Key>
+          <Property Name="CharacterSkillId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CharacterId" Type="int" Nullable="false" />
+          <Property Name="EveOnlineSkillId" Type="int" Nullable="false" />
+          <Property Name="Rank" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContactUsLog">
+          <Key>
+            <PropertyRef Name="ContactUsLogId" />
+          </Key>
+          <Property Name="ContactUsLogId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="200" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="AddedByUserId" Type="int" />
+          <Property Name="AddedDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Corporation">
+          <Key>
+            <PropertyRef Name="CorporationId" />
+          </Key>
+          <Property Name="CorporationId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="EveOnlineAttribute">
+          <Key>
+            <PropertyRef Name="EveOnlineAttributeId" />
+          </Key>
+          <Property Name="EveOnlineAttributeId" Type="int" Nullable="false" />
+          <Property Name="EveOnlineIconId" Type="int" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="ShortDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="EveOnlineBloodline">
+          <Key>
+            <PropertyRef Name="EveOnlineBloodlineId" />
+          </Key>
+          <Property Name="EveOnlineBloodlineId" Type="int" Nullable="false" />
+          <Property Name="EveOnlineRaceId" Type="int" Nullable="false" />
+          <Property Name="EveOnlineIconId" Type="int" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="MaleDescription" Type="nvarchar(max)" />
+          <Property Name="FemaleDescription" Type="nvarchar(max)" />
+          <Property Name="ShortDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="ShortMaleDescription" Type="nvarchar(max)" />
+          <Property Name="ShortFemaleDescription" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EveOnlineCategory">
+          <Key>
+            <PropertyRef Name="EveOnlineCategoryId" />
+          </Key>
+          <Property Name="EveOnlineCategoryId" Type="int" Nullable="false" />
+          <Property Name="EveOnlineIconId" Type="int" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EveOnlineConstellation">
+          <Key>
+            <PropertyRef Name="EveOnlineConstellationId" />
+          </Key>
+          <Property Name="EveOnlineConstellationId" Type="int" Nullable="false" />
+          <Property Name="EveOnlineRegionId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="EveOnlineFaction">
+          <Key>
+            <PropertyRef Name="EveOnlineFactionId" />
+          </Key>
+          <Property Name="EveOnlineFactionId" Type="int" Nullable="false" />
+          <Property Name="EveOnlineIconId" Type="int" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EveOnlineGroup">
+          <Key>
+            <PropertyRef Name="EveOnlineGroupId" />
+          </Key>
+          <Property Name="EveOnlineGroupId" Type="int" Nullable="false" />
+          <Property Name="EveOnlineCategoryId" Type="int" />
+          <Property Name="EveOnlineIconId" Type="int" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EveOnlineIcon">
+          <Key>
+            <PropertyRef Name="EveOnlineIconId" />
+          </Key>
+          <Property Name="EveOnlineIconId" Type="int" Nullable="false" />
+          <Property Name="FileNameWithoutExtension" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EveOnlineMarketGroup">
+          <Key>
+            <PropertyRef Name="EveOnlineMarketGroupId" />
+          </Key>
+          <Property Name="EveOnlineMarketGroupId" Type="int" Nullable="false" />
+          <Property Name="ParentEveOnlineMarketGroupId" Type="int" />
+          <Property Name="EveOnlineIconId" Type="int" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="HasTypes" Type="bit" />
+        </EntityType>
+        <EntityType Name="EveOnlineRace">
+          <Key>
+            <PropertyRef Name="EveOnlineRaceId" />
+          </Key>
+          <Property Name="EveOnlineRaceId" Type="int" Nullable="false" />
+          <Property Name="EveOnlineIconId" Type="int" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="ShortDescription" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="EveOnlineRegion">
+          <Key>
+            <PropertyRef Name="EveOnlineRegionId" />
+          </Key>
+          <Property Name="EveOnlineRegionId" Type="int" Nullable="false" />
+          <Property Name="EveOnlineFactionId" Type="int" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="EveOnlineRequiredSkill">
+          <Key>
+            <PropertyRef Name="EveOnlineRequiredSkillId" />
+          </Key>
+          <Property Name="EveOnlineRequiredSkillId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EveOnlineSkillId" Type="int" Nullable="false" />
+          <Property Name="RequiredEveOnlineSkillId" Type="int" Nullable="false" />
+          <Property Name="RequiredSkillLevel" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EveOnlineSkill">
+          <Key>
+            <PropertyRef Name="EveOnlineSkillId" />
+          </Key>
+          <Property Name="EveOnlineSkillId" Type="int" Nullable="false" />
+          <Property Name="EveOnlineSkillGroupId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+          <Property Name="PrimaryEveOnlineAttributeId" Type="int" Nullable="false" />
+          <Property Name="SecondaryEveOnlineAttributeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EveOnlineSkillGroup">
+          <Key>
+            <PropertyRef Name="EveOnlineSkillGroupId" />
+          </Key>
+          <Property Name="EveOnlineSkillGroupId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="EveOnlineSkillTree">
+          <Key>
+            <PropertyRef Name="EveOnlineSkillTreeId" />
+          </Key>
+          <Property Name="EveOnlineSkillTreeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Xml" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AddedByUserId" Type="int" Nullable="false" />
+          <Property Name="AddedDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EveOnlineSolarSystem">
+          <Key>
+            <PropertyRef Name="EveOnlineSolarSystemId" />
+          </Key>
+          <Property Name="EveOnlineSolarSystemId" Type="int" Nullable="false" />
+          <Property Name="EveOnlineConstellationId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Security" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EveOnlineType">
+          <Key>
+            <PropertyRef Name="EveOnlineTypeId" />
+          </Key>
+          <Property Name="EveOnlineTypeId" Type="int" Nullable="false" />
+          <Property Name="EveOnlineGroupId" Type="int" />
+          <Property Name="EveOnlineIconId" Type="int" />
+          <Property Name="EveOnlineRaceId" Type="int" />
+          <Property Name="EveOnlineMarketGroupId" Type="int" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="KillLog">
+          <Key>
+            <PropertyRef Name="KillLogId" />
+          </Key>
+          <Property Name="KillLogId" Type="int" Nullable="false" />
+          <Property Name="SolarSystemId" Type="int" Nullable="false" />
+          <Property Name="KillDateTime" Type="datetime" Nullable="false" />
+          <Property Name="VictimCharacterId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KillLogAttacker">
+          <Key>
+            <PropertyRef Name="KillLogAttackerId" />
+          </Key>
+          <Property Name="KillLogAttackerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="KillLogId" Type="int" Nullable="false" />
+          <Property Name="CharacterId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KillLogItem">
+          <Key>
+            <PropertyRef Name="KillLogItemId" />
+          </Key>
+          <Property Name="KillLogItemId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="KillLogId" Type="int" Nullable="false" />
+          <Property Name="ItemTypeId" Type="int" Nullable="false" />
+          <Property Name="QuantityDropped" Type="int" Nullable="false" />
+          <Property Name="QuantityDestroyed" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserStatusId" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Surname" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="200" />
+          <Property Name="HashedPassword" Type="nvarchar" MaxLength="200" />
+          <Property Name="UnsuccessfulLoginAttempts" Type="int" Nullable="false" />
+          <Property Name="LastSuccessfulAuthenticationDateTime" Type="datetime" />
+          <Property Name="LastSuccessfulLoginDateTime" Type="datetime" />
+          <Property Name="AddedByUserId" Type="int" Nullable="false" />
+          <Property Name="AddedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedByUserId" Type="int" Nullable="false" />
+          <Property Name="ModifiedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="Timestamp" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="UserLog">
+          <Key>
+            <PropertyRef Name="UserLogId" />
+          </Key>
+          <Property Name="UserLogId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="UserLogTypeId" Type="int" Nullable="false" />
+          <Property Name="ActionAgainstUserId" Type="int" />
+          <Property Name="AddedDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserLogType">
+          <Key>
+            <PropertyRef Name="UserLogTypeId" />
+          </Key>
+          <Property Name="UserLogTypeId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleId" />
+          </Key>
+          <Property Name="UserRoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserStatus">
+          <Key>
+            <PropertyRef Name="UserStatusId" />
+          </Key>
+          <Property Name="UserStatusId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_Character_Corporation">
+          <End Role="Corporation" Type="FallenNovaDevelopmentModel.Store.Corporation" Multiplicity="1" />
+          <End Role="Character" Type="FallenNovaDevelopmentModel.Store.Character" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Corporation">
+              <PropertyRef Name="CorporationId" />
+            </Principal>
+            <Dependent Role="Character">
+              <PropertyRef Name="CorporationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Character_User">
+          <End Role="User" Type="FallenNovaDevelopmentModel.Store.User" Multiplicity="1" />
+          <End Role="Character" Type="FallenNovaDevelopmentModel.Store.Character" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Character">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CharacterEveOnlineSkill_Character">
+          <End Role="Character" Type="FallenNovaDevelopmentModel.Store.Character" Multiplicity="1" />
+          <End Role="CharacterEveOnlineSkill" Type="FallenNovaDevelopmentModel.Store.CharacterEveOnlineSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="CharacterId" />
+            </Principal>
+            <Dependent Role="CharacterEveOnlineSkill">
+              <PropertyRef Name="CharacterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CharacterEveOnlineSkill_EveOnlineSkill">
+          <End Role="EveOnlineSkill" Type="FallenNovaDevelopmentModel.Store.EveOnlineSkill" Multiplicity="1" />
+          <End Role="CharacterEveOnlineSkill" Type="FallenNovaDevelopmentModel.Store.CharacterEveOnlineSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineSkill">
+              <PropertyRef Name="EveOnlineSkillId" />
+            </Principal>
+            <Dependent Role="CharacterEveOnlineSkill">
+              <PropertyRef Name="EveOnlineSkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContactUsLog_User">
+          <End Role="User" Type="FallenNovaDevelopmentModel.Store.User" Multiplicity="0..1" />
+          <End Role="ContactUsLog" Type="FallenNovaDevelopmentModel.Store.ContactUsLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ContactUsLog">
+              <PropertyRef Name="AddedByUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineAttribute_EveOnlineIcon">
+          <End Role="EveOnlineIcon" Type="FallenNovaDevelopmentModel.Store.EveOnlineIcon" Multiplicity="0..1" />
+          <End Role="EveOnlineAttribute" Type="FallenNovaDevelopmentModel.Store.EveOnlineAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineAttribute">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineBloodline_EveOnlineIcon">
+          <End Role="EveOnlineIcon" Type="FallenNovaDevelopmentModel.Store.EveOnlineIcon" Multiplicity="0..1" />
+          <End Role="EveOnlineBloodline" Type="FallenNovaDevelopmentModel.Store.EveOnlineBloodline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineBloodline">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineBloodline_EveOnlineRace">
+          <End Role="EveOnlineRace" Type="FallenNovaDevelopmentModel.Store.EveOnlineRace" Multiplicity="1" />
+          <End Role="EveOnlineBloodline" Type="FallenNovaDevelopmentModel.Store.EveOnlineBloodline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineRace">
+              <PropertyRef Name="EveOnlineRaceId" />
+            </Principal>
+            <Dependent Role="EveOnlineBloodline">
+              <PropertyRef Name="EveOnlineRaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineCategory_EveOnlineIcon">
+          <End Role="EveOnlineIcon" Type="FallenNovaDevelopmentModel.Store.EveOnlineIcon" Multiplicity="0..1" />
+          <End Role="EveOnlineCategory" Type="FallenNovaDevelopmentModel.Store.EveOnlineCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineCategory">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineConstellation_EveOnlineRegion">
+          <End Role="EveOnlineRegion" Type="FallenNovaDevelopmentModel.Store.EveOnlineRegion" Multiplicity="1" />
+          <End Role="EveOnlineConstellation" Type="FallenNovaDevelopmentModel.Store.EveOnlineConstellation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineRegion">
+              <PropertyRef Name="EveOnlineRegionId" />
+            </Principal>
+            <Dependent Role="EveOnlineConstellation">
+              <PropertyRef Name="EveOnlineRegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineFaction_EveOnlineIcon">
+          <End Role="EveOnlineIcon" Type="FallenNovaDevelopmentModel.Store.EveOnlineIcon" Multiplicity="0..1" />
+          <End Role="EveOnlineFaction" Type="FallenNovaDevelopmentModel.Store.EveOnlineFaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineFaction">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineGroup_EveOnlineCategory">
+          <End Role="EveOnlineCategory" Type="FallenNovaDevelopmentModel.Store.EveOnlineCategory" Multiplicity="0..1" />
+          <End Role="EveOnlineGroup" Type="FallenNovaDevelopmentModel.Store.EveOnlineGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineCategory">
+              <PropertyRef Name="EveOnlineCategoryId" />
+            </Principal>
+            <Dependent Role="EveOnlineGroup">
+              <PropertyRef Name="EveOnlineCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineGroup_EveOnlineIcon">
+          <End Role="EveOnlineIcon" Type="FallenNovaDevelopmentModel.Store.EveOnlineIcon" Multiplicity="0..1" />
+          <End Role="EveOnlineGroup" Type="FallenNovaDevelopmentModel.Store.EveOnlineGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineGroup">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineMarketGroup_EveOnlineIcon">
+          <End Role="EveOnlineIcon" Type="FallenNovaDevelopmentModel.Store.EveOnlineIcon" Multiplicity="0..1" />
+          <End Role="EveOnlineMarketGroup" Type="FallenNovaDevelopmentModel.Store.EveOnlineMarketGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineMarketGroup">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineMarketGroup_EveOnlineMarketGroup">
+          <End Role="EveOnlineMarketGroup" Type="FallenNovaDevelopmentModel.Store.EveOnlineMarketGroup" Multiplicity="0..1" />
+          <End Role="EveOnlineMarketGroup1" Type="FallenNovaDevelopmentModel.Store.EveOnlineMarketGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineMarketGroup">
+              <PropertyRef Name="EveOnlineMarketGroupId" />
+            </Principal>
+            <Dependent Role="EveOnlineMarketGroup1">
+              <PropertyRef Name="ParentEveOnlineMarketGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineRace_EveOnlineIcon">
+          <End Role="EveOnlineIcon" Type="FallenNovaDevelopmentModel.Store.EveOnlineIcon" Multiplicity="0..1" />
+          <End Role="EveOnlineRace" Type="FallenNovaDevelopmentModel.Store.EveOnlineRace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineRace">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineRegion_EveOnlineFaction">
+          <End Role="EveOnlineFaction" Type="FallenNovaDevelopmentModel.Store.EveOnlineFaction" Multiplicity="0..1" />
+          <End Role="EveOnlineRegion" Type="FallenNovaDevelopmentModel.Store.EveOnlineRegion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineFaction">
+              <PropertyRef Name="EveOnlineFactionId" />
+            </Principal>
+            <Dependent Role="EveOnlineRegion">
+              <PropertyRef Name="EveOnlineFactionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineRequiredSkill_1_EveOnlineSkill">
+          <End Role="EveOnlineSkill" Type="FallenNovaDevelopmentModel.Store.EveOnlineSkill" Multiplicity="1" />
+          <End Role="EveOnlineRequiredSkill" Type="FallenNovaDevelopmentModel.Store.EveOnlineRequiredSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineSkill">
+              <PropertyRef Name="EveOnlineSkillId" />
+            </Principal>
+            <Dependent Role="EveOnlineRequiredSkill">
+              <PropertyRef Name="EveOnlineSkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineRequiredSkill_2_RequiredEveOnlineSkill">
+          <End Role="EveOnlineSkill" Type="FallenNovaDevelopmentModel.Store.EveOnlineSkill" Multiplicity="1" />
+          <End Role="EveOnlineRequiredSkill" Type="FallenNovaDevelopmentModel.Store.EveOnlineRequiredSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineSkill">
+              <PropertyRef Name="EveOnlineSkillId" />
+            </Principal>
+            <Dependent Role="EveOnlineRequiredSkill">
+              <PropertyRef Name="RequiredEveOnlineSkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineSkill_1_PrimaryEveOnlineAttribute">
+          <End Role="EveOnlineAttribute" Type="FallenNovaDevelopmentModel.Store.EveOnlineAttribute" Multiplicity="1" />
+          <End Role="EveOnlineSkill" Type="FallenNovaDevelopmentModel.Store.EveOnlineSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineAttribute">
+              <PropertyRef Name="EveOnlineAttributeId" />
+            </Principal>
+            <Dependent Role="EveOnlineSkill">
+              <PropertyRef Name="PrimaryEveOnlineAttributeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineSkill_2_SecondaryEveOnlineAttribute">
+          <End Role="EveOnlineAttribute" Type="FallenNovaDevelopmentModel.Store.EveOnlineAttribute" Multiplicity="1" />
+          <End Role="EveOnlineSkill" Type="FallenNovaDevelopmentModel.Store.EveOnlineSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineAttribute">
+              <PropertyRef Name="EveOnlineAttributeId" />
+            </Principal>
+            <Dependent Role="EveOnlineSkill">
+              <PropertyRef Name="SecondaryEveOnlineAttributeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineSkill_EveOnlineSkillGroup">
+          <End Role="EveOnlineSkillGroup" Type="FallenNovaDevelopmentModel.Store.EveOnlineSkillGroup" Multiplicity="1" />
+          <End Role="EveOnlineSkill" Type="FallenNovaDevelopmentModel.Store.EveOnlineSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineSkillGroup">
+              <PropertyRef Name="EveOnlineSkillGroupId" />
+            </Principal>
+            <Dependent Role="EveOnlineSkill">
+              <PropertyRef Name="EveOnlineSkillGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineSkillTree_User">
+          <End Role="User" Type="FallenNovaDevelopmentModel.Store.User" Multiplicity="1" />
+          <End Role="EveOnlineSkillTree" Type="FallenNovaDevelopmentModel.Store.EveOnlineSkillTree" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="EveOnlineSkillTree">
+              <PropertyRef Name="AddedByUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineSolarSystem_EveOnlineConstellation">
+          <End Role="EveOnlineConstellation" Type="FallenNovaDevelopmentModel.Store.EveOnlineConstellation" Multiplicity="1" />
+          <End Role="EveOnlineSolarSystem" Type="FallenNovaDevelopmentModel.Store.EveOnlineSolarSystem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineConstellation">
+              <PropertyRef Name="EveOnlineConstellationId" />
+            </Principal>
+            <Dependent Role="EveOnlineSolarSystem">
+              <PropertyRef Name="EveOnlineConstellationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineType_EveOnlineGroup">
+          <End Role="EveOnlineGroup" Type="FallenNovaDevelopmentModel.Store.EveOnlineGroup" Multiplicity="0..1" />
+          <End Role="EveOnlineType" Type="FallenNovaDevelopmentModel.Store.EveOnlineType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineGroup">
+              <PropertyRef Name="EveOnlineGroupId" />
+            </Principal>
+            <Dependent Role="EveOnlineType">
+              <PropertyRef Name="EveOnlineGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineType_EveOnlineIcon">
+          <End Role="EveOnlineIcon" Type="FallenNovaDevelopmentModel.Store.EveOnlineIcon" Multiplicity="0..1" />
+          <End Role="EveOnlineType" Type="FallenNovaDevelopmentModel.Store.EveOnlineType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineType">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineType_EveOnlineMarketGroup">
+          <End Role="EveOnlineMarketGroup" Type="FallenNovaDevelopmentModel.Store.EveOnlineMarketGroup" Multiplicity="0..1" />
+          <End Role="EveOnlineType" Type="FallenNovaDevelopmentModel.Store.EveOnlineType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineMarketGroup">
+              <PropertyRef Name="EveOnlineMarketGroupId" />
+            </Principal>
+            <Dependent Role="EveOnlineType">
+              <PropertyRef Name="EveOnlineMarketGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineType_EveOnlineRace">
+          <End Role="EveOnlineRace" Type="FallenNovaDevelopmentModel.Store.EveOnlineRace" Multiplicity="0..1" />
+          <End Role="EveOnlineType" Type="FallenNovaDevelopmentModel.Store.EveOnlineType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineRace">
+              <PropertyRef Name="EveOnlineRaceId" />
+            </Principal>
+            <Dependent Role="EveOnlineType">
+              <PropertyRef Name="EveOnlineRaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KillLog_Character">
+          <End Role="Character" Type="FallenNovaDevelopmentModel.Store.Character" Multiplicity="1" />
+          <End Role="KillLog" Type="FallenNovaDevelopmentModel.Store.KillLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="CharacterId" />
+            </Principal>
+            <Dependent Role="KillLog">
+              <PropertyRef Name="VictimCharacterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KillLogAttacker_KillLog">
+          <End Role="KillLog" Type="FallenNovaDevelopmentModel.Store.KillLog" Multiplicity="1" />
+          <End Role="KillLogAttacker" Type="FallenNovaDevelopmentModel.Store.KillLogAttacker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KillLog">
+              <PropertyRef Name="KillLogId" />
+            </Principal>
+            <Dependent Role="KillLogAttacker">
+              <PropertyRef Name="KillLogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KillLogItem_KillLog">
+          <End Role="KillLog" Type="FallenNovaDevelopmentModel.Store.KillLog" Multiplicity="1" />
+          <End Role="KillLogItem" Type="FallenNovaDevelopmentModel.Store.KillLogItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KillLog">
+              <PropertyRef Name="KillLogId" />
+            </Principal>
+            <Dependent Role="KillLogItem">
+              <PropertyRef Name="KillLogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_1_AddedByUser">
+          <End Role="User" Type="FallenNovaDevelopmentModel.Store.User" Multiplicity="1" />
+          <End Role="User1" Type="FallenNovaDevelopmentModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="AddedByUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_2_ModifiedByUser">
+          <End Role="User" Type="FallenNovaDevelopmentModel.Store.User" Multiplicity="1" />
+          <End Role="User1" Type="FallenNovaDevelopmentModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="ModifiedByUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLog_1_User">
+          <End Role="User" Type="FallenNovaDevelopmentModel.Store.User" Multiplicity="1" />
+          <End Role="UserLog" Type="FallenNovaDevelopmentModel.Store.UserLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserLog">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLog_2_ActionAgainstUser">
+          <End Role="User" Type="FallenNovaDevelopmentModel.Store.User" Multiplicity="0..1" />
+          <End Role="UserLog" Type="FallenNovaDevelopmentModel.Store.UserLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserLog">
+              <PropertyRef Name="ActionAgainstUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLog_UserLogType">
+          <End Role="UserLogType" Type="FallenNovaDevelopmentModel.Store.UserLogType" Multiplicity="1" />
+          <End Role="UserLog" Type="FallenNovaDevelopmentModel.Store.UserLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserLogType">
+              <PropertyRef Name="UserLogTypeId" />
+            </Principal>
+            <Dependent Role="UserLog">
+              <PropertyRef Name="UserLogTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_Role">
+          <End Role="Role" Type="FallenNovaDevelopmentModel.Store.Role" Multiplicity="1" />
+          <End Role="UserRole" Type="FallenNovaDevelopmentModel.Store.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_User">
+          <End Role="User" Type="FallenNovaDevelopmentModel.Store.User" Multiplicity="1" />
+          <End Role="UserRole" Type="FallenNovaDevelopmentModel.Store.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FallenNovaDevelopmentModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FallenNovaContext" p1:LazyLoadingEnabled="false">
+          <EntitySet Name="Characters" EntityType="FallenNovaDevelopmentModel.Character" />
+          <EntitySet Name="ContactUsLogs" EntityType="FallenNovaDevelopmentModel.ContactUsLog" />
+          <EntitySet Name="Corporations" EntityType="FallenNovaDevelopmentModel.Corporation" />
+          <EntitySet Name="EveOnlineAttributes" EntityType="FallenNovaDevelopmentModel.EveOnlineAttribute" />
+          <EntitySet Name="EveOnlineBloodlines" EntityType="FallenNovaDevelopmentModel.EveOnlineBloodline" />
+          <EntitySet Name="EveOnlineCategories" EntityType="FallenNovaDevelopmentModel.EveOnlineCategory" />
+          <EntitySet Name="EveOnlineConstellations" EntityType="FallenNovaDevelopmentModel.EveOnlineConstellation" />
+          <EntitySet Name="EveOnlineFactions" EntityType="FallenNovaDevelopmentModel.EveOnlineFaction" />
+          <EntitySet Name="EveOnlineGroups" EntityType="FallenNovaDevelopmentModel.EveOnlineGroup" />
+          <EntitySet Name="EveOnlineIcons" EntityType="FallenNovaDevelopmentModel.EveOnlineIcon" />
+          <EntitySet Name="EveOnlineMarketGroups" EntityType="FallenNovaDevelopmentModel.EveOnlineMarketGroup" />
+          <EntitySet Name="EveOnlineRaces" EntityType="FallenNovaDevelopmentModel.EveOnlineRace" />
+          <EntitySet Name="EveOnlineRegions" EntityType="FallenNovaDevelopmentModel.EveOnlineRegion" />
+          <EntitySet Name="EveOnlineSolarSystems" EntityType="FallenNovaDevelopmentModel.EveOnlineSolarSystem" />
+          <EntitySet Name="EveOnlineTypes" EntityType="FallenNovaDevelopmentModel.EveOnlineType" />
+          <EntitySet Name="KillLogs" EntityType="FallenNovaDevelopmentModel.KillLog" />
+          <EntitySet Name="KillLogAttackers" EntityType="FallenNovaDevelopmentModel.KillLogAttacker" />
+          <EntitySet Name="KillLogItems" EntityType="FallenNovaDevelopmentModel.KillLogItem" />
+          <EntitySet Name="Roles" EntityType="FallenNovaDevelopmentModel.Role" />
+          <EntitySet Name="Users" EntityType="FallenNovaDevelopmentModel.User" />
+          <EntitySet Name="UserLogs" EntityType="FallenNovaDevelopmentModel.UserLog" />
+          <EntitySet Name="UserLogTypes" EntityType="FallenNovaDevelopmentModel.UserLogType" />
+          <EntitySet Name="UserRoles" EntityType="FallenNovaDevelopmentModel.UserRole" />
+          <EntitySet Name="UserStatuses" EntityType="FallenNovaDevelopmentModel.UserStatus" />
+          <AssociationSet Name="FK_Character_Corporation" Association="FallenNovaDevelopmentModel.FK_Character_Corporation">
+            <End Role="Corporation" EntitySet="Corporations" />
+            <End Role="Character" EntitySet="Characters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Character_User" Association="FallenNovaDevelopmentModel.FK_Character_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Character" EntitySet="Characters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KillLog_Character" Association="FallenNovaDevelopmentModel.FK_KillLog_Character">
+            <End Role="Character" EntitySet="Characters" />
+            <End Role="KillLog" EntitySet="KillLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContactUsLog_User" Association="FallenNovaDevelopmentModel.FK_ContactUsLog_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="ContactUsLog" EntitySet="ContactUsLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineAttribute_EveOnlineIcon" Association="FallenNovaDevelopmentModel.FK_EveOnlineAttribute_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcons" />
+            <End Role="EveOnlineAttribute" EntitySet="EveOnlineAttributes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineBloodline_EveOnlineIcon" Association="FallenNovaDevelopmentModel.FK_EveOnlineBloodline_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcons" />
+            <End Role="EveOnlineBloodline" EntitySet="EveOnlineBloodlines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineBloodline_EveOnlineRace" Association="FallenNovaDevelopmentModel.FK_EveOnlineBloodline_EveOnlineRace">
+            <End Role="EveOnlineRace" EntitySet="EveOnlineRaces" />
+            <End Role="EveOnlineBloodline" EntitySet="EveOnlineBloodlines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineCategory_EveOnlineIcon" Association="FallenNovaDevelopmentModel.FK_EveOnlineCategory_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcons" />
+            <End Role="EveOnlineCategory" EntitySet="EveOnlineCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineGroup_EveOnlineCategory" Association="FallenNovaDevelopmentModel.FK_EveOnlineGroup_EveOnlineCategory">
+            <End Role="EveOnlineCategory" EntitySet="EveOnlineCategories" />
+            <End Role="EveOnlineGroup" EntitySet="EveOnlineGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineConstellation_EveOnlineRegion" Association="FallenNovaDevelopmentModel.FK_EveOnlineConstellation_EveOnlineRegion">
+            <End Role="EveOnlineRegion" EntitySet="EveOnlineRegions" />
+            <End Role="EveOnlineConstellation" EntitySet="EveOnlineConstellations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineSolarSystem_EveOnlineConstellation" Association="FallenNovaDevelopmentModel.FK_EveOnlineSolarSystem_EveOnlineConstellation">
+            <End Role="EveOnlineConstellation" EntitySet="EveOnlineConstellations" />
+            <End Role="EveOnlineSolarSystem" EntitySet="EveOnlineSolarSystems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineFaction_EveOnlineIcon" Association="FallenNovaDevelopmentModel.FK_EveOnlineFaction_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcons" />
+            <End Role="EveOnlineFaction" EntitySet="EveOnlineFactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineRegion_EveOnlineFaction" Association="FallenNovaDevelopmentModel.FK_EveOnlineRegion_EveOnlineFaction">
+            <End Role="EveOnlineFaction" EntitySet="EveOnlineFactions" />
+            <End Role="EveOnlineRegion" EntitySet="EveOnlineRegions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineGroup_EveOnlineIcon" Association="FallenNovaDevelopmentModel.FK_EveOnlineGroup_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcons" />
+            <End Role="EveOnlineGroup" EntitySet="EveOnlineGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineType_EveOnlineGroup" Association="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineGroup">
+            <End Role="EveOnlineGroup" EntitySet="EveOnlineGroups" />
+            <End Role="EveOnlineType" EntitySet="EveOnlineTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineMarketGroup_EveOnlineIcon" Association="FallenNovaDevelopmentModel.FK_EveOnlineMarketGroup_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcons" />
+            <End Role="EveOnlineMarketGroup" EntitySet="EveOnlineMarketGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineRace_EveOnlineIcon" Association="FallenNovaDevelopmentModel.FK_EveOnlineRace_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcons" />
+            <End Role="EveOnlineRace" EntitySet="EveOnlineRaces" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineType_EveOnlineIcon" Association="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineIcon">
+            <End Role="EveOnlineIcon" EntitySet="EveOnlineIcons" />
+            <End Role="EveOnlineType" EntitySet="EveOnlineTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineMarketGroup_EveOnlineMarketGroup" Association="FallenNovaDevelopmentModel.FK_EveOnlineMarketGroup_EveOnlineMarketGroup">
+            <End Role="EveOnlineMarketGroup" EntitySet="EveOnlineMarketGroups" />
+            <End Role="EveOnlineMarketGroup1" EntitySet="EveOnlineMarketGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineType_EveOnlineMarketGroup" Association="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineMarketGroup">
+            <End Role="EveOnlineMarketGroup" EntitySet="EveOnlineMarketGroups" />
+            <End Role="EveOnlineType" EntitySet="EveOnlineTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineType_EveOnlineRace" Association="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineRace">
+            <End Role="EveOnlineRace" EntitySet="EveOnlineRaces" />
+            <End Role="EveOnlineType" EntitySet="EveOnlineTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KillLogAttacker_KillLog" Association="FallenNovaDevelopmentModel.FK_KillLogAttacker_KillLog">
+            <End Role="KillLog" EntitySet="KillLogs" />
+            <End Role="KillLogAttacker" EntitySet="KillLogAttackers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KillLogItem_KillLog" Association="FallenNovaDevelopmentModel.FK_KillLogItem_KillLog">
+            <End Role="KillLog" EntitySet="KillLogs" />
+            <End Role="KillLogItem" EntitySet="KillLogItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_Role" Association="FallenNovaDevelopmentModel.FK_UserRole_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="UserRole" EntitySet="UserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_1_AddedByUser" Association="FallenNovaDevelopmentModel.FK_User_1_AddedByUser">
+            <End Role="User" EntitySet="Users" />
+            <End Role="User1" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_2_ModifiedByUser" Association="FallenNovaDevelopmentModel.FK_User_2_ModifiedByUser">
+            <End Role="User" EntitySet="Users" />
+            <End Role="User1" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_UserStatus" Association="FallenNovaDevelopmentModel.FK_User_UserStatus">
+            <End Role="UserStatu" EntitySet="UserStatuses" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLog_User" Association="FallenNovaDevelopmentModel.FK_UserLog_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserLog" EntitySet="UserLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole_User" Association="FallenNovaDevelopmentModel.FK_UserRole_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserRole" EntitySet="UserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLog_UserLogType" Association="FallenNovaDevelopmentModel.FK_UserLog_UserLogType">
+            <End Role="UserLogType" EntitySet="UserLogTypes" />
+            <End Role="UserLog" EntitySet="UserLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLog_2_ActionAgainstUser" Association="FallenNovaDevelopmentModel.FK_UserLog_2_ActionAgainstUser">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserLog" EntitySet="UserLogs" />
+          </AssociationSet>
+          <EntitySet Name="CharacterEveOnlineSkills" EntityType="FallenNovaDevelopmentModel.CharacterEveOnlineSkill" />
+          <EntitySet Name="EveOnlineRequiredSkills" EntityType="FallenNovaDevelopmentModel.EveOnlineRequiredSkill" />
+          <EntitySet Name="EveOnlineSkills" EntityType="FallenNovaDevelopmentModel.EveOnlineSkill" />
+          <EntitySet Name="EveOnlineSkillGroups" EntityType="FallenNovaDevelopmentModel.EveOnlineSkillGroup" />
+          <EntitySet Name="EveOnlineSkillTrees" EntityType="FallenNovaDevelopmentModel.EveOnlineSkillTree" />
+          <AssociationSet Name="FK_CharacterEveOnlineSkill_Character" Association="FallenNovaDevelopmentModel.FK_CharacterEveOnlineSkill_Character">
+            <End Role="Character" EntitySet="Characters" />
+            <End Role="CharacterEveOnlineSkill" EntitySet="CharacterEveOnlineSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CharacterEveOnlineSkill_EveOnlineSkill" Association="FallenNovaDevelopmentModel.FK_CharacterEveOnlineSkill_EveOnlineSkill">
+            <End Role="EveOnlineSkill" EntitySet="EveOnlineSkills" />
+            <End Role="CharacterEveOnlineSkill" EntitySet="CharacterEveOnlineSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineSkill_1_PrimaryEveOnlineAttribute" Association="FallenNovaDevelopmentModel.FK_EveOnlineSkill_1_PrimaryEveOnlineAttribute">
+            <End Role="EveOnlineAttribute" EntitySet="EveOnlineAttributes" />
+            <End Role="EveOnlineSkill" EntitySet="EveOnlineSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineSkill_2_SecondaryEveOnlineAttribute" Association="FallenNovaDevelopmentModel.FK_EveOnlineSkill_2_SecondaryEveOnlineAttribute">
+            <End Role="EveOnlineAttribute" EntitySet="EveOnlineAttributes" />
+            <End Role="EveOnlineSkill" EntitySet="EveOnlineSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineRequiredSkill_1_EveOnlineSkill" Association="FallenNovaDevelopmentModel.FK_EveOnlineRequiredSkill_1_EveOnlineSkill">
+            <End Role="EveOnlineSkill" EntitySet="EveOnlineSkills" />
+            <End Role="EveOnlineRequiredSkill" EntitySet="EveOnlineRequiredSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineRequiredSkill_2_RequiredEveOnlineSkill" Association="FallenNovaDevelopmentModel.FK_EveOnlineRequiredSkill_2_RequiredEveOnlineSkill">
+            <End Role="EveOnlineSkill" EntitySet="EveOnlineSkills" />
+            <End Role="EveOnlineRequiredSkill" EntitySet="EveOnlineRequiredSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineSkill_EveOnlineSkillGroup" Association="FallenNovaDevelopmentModel.FK_EveOnlineSkill_EveOnlineSkillGroup">
+            <End Role="EveOnlineSkillGroup" EntitySet="EveOnlineSkillGroups" />
+            <End Role="EveOnlineSkill" EntitySet="EveOnlineSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EveOnlineSkillTree_User" Association="FallenNovaDevelopmentModel.FK_EveOnlineSkillTree_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="EveOnlineSkillTree" EntitySet="EveOnlineSkillTrees" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Character">
+          <Key>
+            <PropertyRef Name="CharacterId" />
+          </Key>
+          <Property Type="Int32" Name="CharacterId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="CorporationId" Nullable="false" />
+          <Property Type="Int32" Name="KeyId" Nullable="false" />
+          <Property Type="String" Name="VCode" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CharacterName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="AddedDateTime" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="ModifiedDateTime" Nullable="false" Precision="3" />
+          <Property Type="Binary" Name="Timestamp" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Corporation" Relationship="FallenNovaDevelopmentModel.FK_Character_Corporation" FromRole="Character" ToRole="Corporation" />
+          <NavigationProperty Name="User" Relationship="FallenNovaDevelopmentModel.FK_Character_User" FromRole="Character" ToRole="User" />
+          <NavigationProperty Name="KillLogs" Relationship="FallenNovaDevelopmentModel.FK_KillLog_Character" FromRole="Character" ToRole="KillLog" />
+          <NavigationProperty Name="CharacterEveOnlineSkills" Relationship="FallenNovaDevelopmentModel.FK_CharacterEveOnlineSkill_Character" FromRole="Character" ToRole="CharacterEveOnlineSkill" />
+        </EntityType>
+        <EntityType Name="ContactUsLog">
+          <Key>
+            <PropertyRef Name="ContactUsLogId" />
+          </Key>
+          <Property Type="Int32" Name="ContactUsLogId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailAddress" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Message" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="AddedByUserId" />
+          <Property Type="DateTime" Name="AddedDateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="FallenNovaDevelopmentModel.FK_ContactUsLog_User" FromRole="ContactUsLog" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Corporation">
+          <Key>
+            <PropertyRef Name="CorporationId" />
+          </Key>
+          <Property Type="Int32" Name="CorporationId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Characters" Relationship="FallenNovaDevelopmentModel.FK_Character_Corporation" FromRole="Corporation" ToRole="Character" />
+        </EntityType>
+        <EntityType Name="EveOnlineAttribute">
+          <Key>
+            <PropertyRef Name="EveOnlineAttributeId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineAttributeId" Nullable="false" />
+          <Property Type="Int32" Name="EveOnlineIconId" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ShortDescription" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Notes" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EveOnlineIcon" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineAttribute_EveOnlineIcon" FromRole="EveOnlineAttribute" ToRole="EveOnlineIcon" />
+          <NavigationProperty Name="EveOnlineSkills" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineSkill_1_PrimaryEveOnlineAttribute" FromRole="EveOnlineAttribute" ToRole="EveOnlineSkill" />
+          <NavigationProperty Name="EveOnlineSkills1" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineSkill_2_SecondaryEveOnlineAttribute" FromRole="EveOnlineAttribute" ToRole="EveOnlineSkill" />
+        </EntityType>
+        <EntityType Name="EveOnlineBloodline">
+          <Key>
+            <PropertyRef Name="EveOnlineBloodlineId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineBloodlineId" Nullable="false" />
+          <Property Type="Int32" Name="EveOnlineRaceId" Nullable="false" />
+          <Property Type="Int32" Name="EveOnlineIconId" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MaleDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FemaleDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ShortDescription" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ShortMaleDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ShortFemaleDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EveOnlineIcon" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineBloodline_EveOnlineIcon" FromRole="EveOnlineBloodline" ToRole="EveOnlineIcon" />
+          <NavigationProperty Name="EveOnlineRace" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineBloodline_EveOnlineRace" FromRole="EveOnlineBloodline" ToRole="EveOnlineRace" />
+        </EntityType>
+        <EntityType Name="EveOnlineCategory">
+          <Key>
+            <PropertyRef Name="EveOnlineCategoryId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineCategoryId" Nullable="false" />
+          <Property Type="Int32" Name="EveOnlineIconId" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EveOnlineIcon" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineCategory_EveOnlineIcon" FromRole="EveOnlineCategory" ToRole="EveOnlineIcon" />
+          <NavigationProperty Name="EveOnlineGroups" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineGroup_EveOnlineCategory" FromRole="EveOnlineCategory" ToRole="EveOnlineGroup" />
+        </EntityType>
+        <EntityType Name="EveOnlineConstellation">
+          <Key>
+            <PropertyRef Name="EveOnlineConstellationId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineConstellationId" Nullable="false" />
+          <Property Type="Int32" Name="EveOnlineRegionId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EveOnlineRegion" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineConstellation_EveOnlineRegion" FromRole="EveOnlineConstellation" ToRole="EveOnlineRegion" />
+          <NavigationProperty Name="EveOnlineSolarSystems" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineSolarSystem_EveOnlineConstellation" FromRole="EveOnlineConstellation" ToRole="EveOnlineSolarSystem" />
+        </EntityType>
+        <EntityType Name="EveOnlineFaction">
+          <Key>
+            <PropertyRef Name="EveOnlineFactionId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineFactionId" Nullable="false" />
+          <Property Type="Int32" Name="EveOnlineIconId" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EveOnlineIcon" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineFaction_EveOnlineIcon" FromRole="EveOnlineFaction" ToRole="EveOnlineIcon" />
+          <NavigationProperty Name="EveOnlineRegions" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineRegion_EveOnlineFaction" FromRole="EveOnlineFaction" ToRole="EveOnlineRegion" />
+        </EntityType>
+        <EntityType Name="EveOnlineGroup">
+          <Key>
+            <PropertyRef Name="EveOnlineGroupId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineGroupId" Nullable="false" />
+          <Property Type="Int32" Name="EveOnlineCategoryId" />
+          <Property Type="Int32" Name="EveOnlineIconId" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EveOnlineCategory" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineGroup_EveOnlineCategory" FromRole="EveOnlineGroup" ToRole="EveOnlineCategory" />
+          <NavigationProperty Name="EveOnlineIcon" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineGroup_EveOnlineIcon" FromRole="EveOnlineGroup" ToRole="EveOnlineIcon" />
+          <NavigationProperty Name="EveOnlineTypes" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineGroup" FromRole="EveOnlineGroup" ToRole="EveOnlineType" />
+        </EntityType>
+        <EntityType Name="EveOnlineIcon">
+          <Key>
+            <PropertyRef Name="EveOnlineIconId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineIconId" Nullable="false" />
+          <Property Type="String" Name="FileNameWithoutExtension" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EveOnlineAttributes" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineAttribute_EveOnlineIcon" FromRole="EveOnlineIcon" ToRole="EveOnlineAttribute" />
+          <NavigationProperty Name="EveOnlineBloodlines" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineBloodline_EveOnlineIcon" FromRole="EveOnlineIcon" ToRole="EveOnlineBloodline" />
+          <NavigationProperty Name="EveOnlineCategories" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineCategory_EveOnlineIcon" FromRole="EveOnlineIcon" ToRole="EveOnlineCategory" />
+          <NavigationProperty Name="EveOnlineFactions" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineFaction_EveOnlineIcon" FromRole="EveOnlineIcon" ToRole="EveOnlineFaction" />
+          <NavigationProperty Name="EveOnlineGroups" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineGroup_EveOnlineIcon" FromRole="EveOnlineIcon" ToRole="EveOnlineGroup" />
+          <NavigationProperty Name="EveOnlineMarketGroups" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineMarketGroup_EveOnlineIcon" FromRole="EveOnlineIcon" ToRole="EveOnlineMarketGroup" />
+          <NavigationProperty Name="EveOnlineRaces" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineRace_EveOnlineIcon" FromRole="EveOnlineIcon" ToRole="EveOnlineRace" />
+          <NavigationProperty Name="EveOnlineTypes" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineIcon" FromRole="EveOnlineIcon" ToRole="EveOnlineType" />
+        </EntityType>
+        <EntityType Name="EveOnlineMarketGroup">
+          <Key>
+            <PropertyRef Name="EveOnlineMarketGroupId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineMarketGroupId" Nullable="false" />
+          <Property Type="Int32" Name="ParentEveOnlineMarketGroupId" />
+          <Property Type="Int32" Name="EveOnlineIconId" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="HasTypes" />
+          <NavigationProperty Name="EveOnlineIcon" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineMarketGroup_EveOnlineIcon" FromRole="EveOnlineMarketGroup" ToRole="EveOnlineIcon" />
+          <NavigationProperty Name="EveOnlineMarketGroup1" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineMarketGroup_EveOnlineMarketGroup" FromRole="EveOnlineMarketGroup" ToRole="EveOnlineMarketGroup1" />
+          <NavigationProperty Name="EveOnlineMarketGroup2" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineMarketGroup_EveOnlineMarketGroup" FromRole="EveOnlineMarketGroup1" ToRole="EveOnlineMarketGroup" />
+          <NavigationProperty Name="EveOnlineTypes" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineMarketGroup" FromRole="EveOnlineMarketGroup" ToRole="EveOnlineType" />
+        </EntityType>
+        <EntityType Name="EveOnlineRace">
+          <Key>
+            <PropertyRef Name="EveOnlineRaceId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineRaceId" Nullable="false" />
+          <Property Type="Int32" Name="EveOnlineIconId" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ShortDescription" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EveOnlineBloodlines" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineBloodline_EveOnlineRace" FromRole="EveOnlineRace" ToRole="EveOnlineBloodline" />
+          <NavigationProperty Name="EveOnlineIcon" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineRace_EveOnlineIcon" FromRole="EveOnlineRace" ToRole="EveOnlineIcon" />
+          <NavigationProperty Name="EveOnlineTypes" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineRace" FromRole="EveOnlineRace" ToRole="EveOnlineType" />
+        </EntityType>
+        <EntityType Name="EveOnlineRegion">
+          <Key>
+            <PropertyRef Name="EveOnlineRegionId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineRegionId" Nullable="false" />
+          <Property Type="Int32" Name="EveOnlineFactionId" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EveOnlineConstellations" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineConstellation_EveOnlineRegion" FromRole="EveOnlineRegion" ToRole="EveOnlineConstellation" />
+          <NavigationProperty Name="EveOnlineFaction" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineRegion_EveOnlineFaction" FromRole="EveOnlineRegion" ToRole="EveOnlineFaction" />
+        </EntityType>
+        <EntityType Name="EveOnlineSolarSystem">
+          <Key>
+            <PropertyRef Name="EveOnlineSolarSystemId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineSolarSystemId" Nullable="false" />
+          <Property Type="Int32" Name="EveOnlineConstellationId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Security" Nullable="false" />
+          <NavigationProperty Name="EveOnlineConstellation" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineSolarSystem_EveOnlineConstellation" FromRole="EveOnlineSolarSystem" ToRole="EveOnlineConstellation" />
+        </EntityType>
+        <EntityType Name="EveOnlineType">
+          <Key>
+            <PropertyRef Name="EveOnlineTypeId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineTypeId" Nullable="false" />
+          <Property Type="Int32" Name="EveOnlineGroupId" />
+          <Property Type="Int32" Name="EveOnlineIconId" />
+          <Property Type="Int32" Name="EveOnlineRaceId" />
+          <Property Type="Int32" Name="EveOnlineMarketGroupId" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EveOnlineGroup" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineGroup" FromRole="EveOnlineType" ToRole="EveOnlineGroup" />
+          <NavigationProperty Name="EveOnlineIcon" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineIcon" FromRole="EveOnlineType" ToRole="EveOnlineIcon" />
+          <NavigationProperty Name="EveOnlineMarketGroup" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineMarketGroup" FromRole="EveOnlineType" ToRole="EveOnlineMarketGroup" />
+          <NavigationProperty Name="EveOnlineRace" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineRace" FromRole="EveOnlineType" ToRole="EveOnlineRace" />
+        </EntityType>
+        <EntityType Name="KillLog">
+          <Key>
+            <PropertyRef Name="KillLogId" />
+          </Key>
+          <Property Type="Int32" Name="KillLogId" Nullable="false" />
+          <Property Type="Int32" Name="SolarSystemId" Nullable="false" />
+          <Property Type="DateTime" Name="KillDateTime" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="VictimCharacterId" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="FallenNovaDevelopmentModel.FK_KillLog_Character" FromRole="KillLog" ToRole="Character" />
+          <NavigationProperty Name="KillLogAttackers" Relationship="FallenNovaDevelopmentModel.FK_KillLogAttacker_KillLog" FromRole="KillLog" ToRole="KillLogAttacker" />
+          <NavigationProperty Name="KillLogItems" Relationship="FallenNovaDevelopmentModel.FK_KillLogItem_KillLog" FromRole="KillLog" ToRole="KillLogItem" />
+        </EntityType>
+        <EntityType Name="KillLogAttacker">
+          <Key>
+            <PropertyRef Name="KillLogAttackerId" />
+          </Key>
+          <Property Type="Int32" Name="KillLogAttackerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="KillLogId" Nullable="false" />
+          <Property Type="Int32" Name="CharacterId" Nullable="false" />
+          <NavigationProperty Name="KillLog" Relationship="FallenNovaDevelopmentModel.FK_KillLogAttacker_KillLog" FromRole="KillLogAttacker" ToRole="KillLog" />
+        </EntityType>
+        <EntityType Name="KillLogItem">
+          <Key>
+            <PropertyRef Name="KillLogItemId" />
+          </Key>
+          <Property Type="Int32" Name="KillLogItemId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="KillLogId" Nullable="false" />
+          <Property Type="Int32" Name="ItemTypeId" Nullable="false" />
+          <Property Type="Int32" Name="QuantityDropped" Nullable="false" />
+          <Property Type="Int32" Name="QuantityDestroyed" Nullable="false" />
+          <NavigationProperty Name="KillLog" Relationship="FallenNovaDevelopmentModel.FK_KillLogItem_KillLog" FromRole="KillLogItem" ToRole="KillLog" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserRoles" Relationship="FallenNovaDevelopmentModel.FK_UserRole_Role" FromRole="Role" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserStatusId" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Surname" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailAddress" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HashedPassword" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="AddedByUserId" Nullable="false" />
+          <Property Type="DateTime" Name="AddedDateTime" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="ModifiedByUserId" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDateTime" Nullable="false" Precision="3" />
+          <Property Type="Binary" Name="Timestamp" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Characters" Relationship="FallenNovaDevelopmentModel.FK_Character_User" FromRole="User" ToRole="Character" />
+          <NavigationProperty Name="ContactUsLogs" Relationship="FallenNovaDevelopmentModel.FK_ContactUsLog_User" FromRole="User" ToRole="ContactUsLog" />
+          <NavigationProperty Name="User1" Relationship="FallenNovaDevelopmentModel.FK_User_1_AddedByUser" FromRole="User" ToRole="User1" />
+          <NavigationProperty Name="User2" Relationship="FallenNovaDevelopmentModel.FK_User_1_AddedByUser" FromRole="User1" ToRole="User" />
+          <NavigationProperty Name="User11" Relationship="FallenNovaDevelopmentModel.FK_User_2_ModifiedByUser" FromRole="User" ToRole="User1" />
+          <NavigationProperty Name="User3" Relationship="FallenNovaDevelopmentModel.FK_User_2_ModifiedByUser" FromRole="User1" ToRole="User" />
+          <NavigationProperty Name="UserStatus" Relationship="FallenNovaDevelopmentModel.FK_User_UserStatus" FromRole="User" ToRole="UserStatu" />
+          <NavigationProperty Name="UserLogs" Relationship="FallenNovaDevelopmentModel.FK_UserLog_User" FromRole="User" ToRole="UserLog" />
+          <NavigationProperty Name="UserRoles" Relationship="FallenNovaDevelopmentModel.FK_UserRole_User" FromRole="User" ToRole="UserRole" />
+          <Property Type="Int32" Name="UnsuccessfulLoginAttempts" Nullable="false" />
+          <Property Type="DateTime" Name="LastSuccessfulLoginDateTime" Precision="3" />
+          <NavigationProperty Name="UserLogs1" Relationship="FallenNovaDevelopmentModel.FK_UserLog_2_ActionAgainstUser" FromRole="User" ToRole="UserLog" />
+          <Property Type="DateTime" Name="LastSuccessfulAuthenticationDateTime" Precision="3" />
+          <NavigationProperty Name="EveOnlineSkillTrees" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineSkillTree_User" FromRole="User" ToRole="EveOnlineSkillTree" />
+        </EntityType>
+        <EntityType Name="UserLog">
+          <Key>
+            <PropertyRef Name="UserLogId" />
+          </Key>
+          <Property Type="Int32" Name="UserLogId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="UserLogTypeId" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="FallenNovaDevelopmentModel.FK_UserLog_User" FromRole="UserLog" ToRole="User" />
+          <NavigationProperty Name="UserLogType" Relationship="FallenNovaDevelopmentModel.FK_UserLog_UserLogType" FromRole="UserLog" ToRole="UserLogType" />
+          <Property Type="Int32" Name="ActionAgainstUserId" />
+          <Property Type="DateTime" Name="AddedDateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User1" Relationship="FallenNovaDevelopmentModel.FK_UserLog_2_ActionAgainstUser" FromRole="UserLog" ToRole="User" />
+        </EntityType>
+        <EntityType Name="UserLogType">
+          <Key>
+            <PropertyRef Name="UserLogTypeId" />
+          </Key>
+          <Property Type="Int32" Name="UserLogTypeId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserLogs" Relationship="FallenNovaDevelopmentModel.FK_UserLog_UserLogType" FromRole="UserLogType" ToRole="UserLog" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleId" />
+          </Key>
+          <Property Type="Int32" Name="UserRoleId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="FallenNovaDevelopmentModel.FK_UserRole_Role" FromRole="UserRole" ToRole="Role" />
+          <NavigationProperty Name="User" Relationship="FallenNovaDevelopmentModel.FK_UserRole_User" FromRole="UserRole" ToRole="User" />
+        </EntityType>
+        <EntityType Name="UserStatus">
+          <Key>
+            <PropertyRef Name="UserStatusId" />
+          </Key>
+          <Property Type="Int32" Name="UserStatusId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Users" Relationship="FallenNovaDevelopmentModel.FK_User_UserStatus" FromRole="UserStatu" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Character_Corporation">
+          <End Type="FallenNovaDevelopmentModel.Corporation" Role="Corporation" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.Character" Role="Character" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Corporation">
+              <PropertyRef Name="CorporationId" />
+            </Principal>
+            <Dependent Role="Character">
+              <PropertyRef Name="CorporationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Character_User">
+          <End Type="FallenNovaDevelopmentModel.User" Role="User" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.Character" Role="Character" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Character">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KillLog_Character">
+          <End Type="FallenNovaDevelopmentModel.Character" Role="Character" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.KillLog" Role="KillLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="CharacterId" />
+            </Principal>
+            <Dependent Role="KillLog">
+              <PropertyRef Name="VictimCharacterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContactUsLog_User">
+          <End Type="FallenNovaDevelopmentModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.ContactUsLog" Role="ContactUsLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ContactUsLog">
+              <PropertyRef Name="AddedByUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineAttribute_EveOnlineIcon">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineIcon" Role="EveOnlineIcon" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineAttribute" Role="EveOnlineAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineAttribute">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineBloodline_EveOnlineIcon">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineIcon" Role="EveOnlineIcon" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineBloodline" Role="EveOnlineBloodline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineBloodline">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineBloodline_EveOnlineRace">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineRace" Role="EveOnlineRace" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineBloodline" Role="EveOnlineBloodline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineRace">
+              <PropertyRef Name="EveOnlineRaceId" />
+            </Principal>
+            <Dependent Role="EveOnlineBloodline">
+              <PropertyRef Name="EveOnlineRaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineCategory_EveOnlineIcon">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineIcon" Role="EveOnlineIcon" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineCategory" Role="EveOnlineCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineCategory">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineGroup_EveOnlineCategory">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineCategory" Role="EveOnlineCategory" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineGroup" Role="EveOnlineGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineCategory">
+              <PropertyRef Name="EveOnlineCategoryId" />
+            </Principal>
+            <Dependent Role="EveOnlineGroup">
+              <PropertyRef Name="EveOnlineCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineConstellation_EveOnlineRegion">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineRegion" Role="EveOnlineRegion" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineConstellation" Role="EveOnlineConstellation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineRegion">
+              <PropertyRef Name="EveOnlineRegionId" />
+            </Principal>
+            <Dependent Role="EveOnlineConstellation">
+              <PropertyRef Name="EveOnlineRegionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineSolarSystem_EveOnlineConstellation">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineConstellation" Role="EveOnlineConstellation" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineSolarSystem" Role="EveOnlineSolarSystem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineConstellation">
+              <PropertyRef Name="EveOnlineConstellationId" />
+            </Principal>
+            <Dependent Role="EveOnlineSolarSystem">
+              <PropertyRef Name="EveOnlineConstellationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineFaction_EveOnlineIcon">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineIcon" Role="EveOnlineIcon" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineFaction" Role="EveOnlineFaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineFaction">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineRegion_EveOnlineFaction">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineFaction" Role="EveOnlineFaction" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineRegion" Role="EveOnlineRegion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineFaction">
+              <PropertyRef Name="EveOnlineFactionId" />
+            </Principal>
+            <Dependent Role="EveOnlineRegion">
+              <PropertyRef Name="EveOnlineFactionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineGroup_EveOnlineIcon">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineIcon" Role="EveOnlineIcon" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineGroup" Role="EveOnlineGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineGroup">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineType_EveOnlineGroup">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineGroup" Role="EveOnlineGroup" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineType" Role="EveOnlineType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineGroup">
+              <PropertyRef Name="EveOnlineGroupId" />
+            </Principal>
+            <Dependent Role="EveOnlineType">
+              <PropertyRef Name="EveOnlineGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineMarketGroup_EveOnlineIcon">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineIcon" Role="EveOnlineIcon" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineMarketGroup" Role="EveOnlineMarketGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineMarketGroup">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineRace_EveOnlineIcon">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineIcon" Role="EveOnlineIcon" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineRace" Role="EveOnlineRace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineRace">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineType_EveOnlineIcon">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineIcon" Role="EveOnlineIcon" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineType" Role="EveOnlineType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineIcon">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Principal>
+            <Dependent Role="EveOnlineType">
+              <PropertyRef Name="EveOnlineIconId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineMarketGroup_EveOnlineMarketGroup">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineMarketGroup" Role="EveOnlineMarketGroup" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineMarketGroup" Role="EveOnlineMarketGroup1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineMarketGroup">
+              <PropertyRef Name="EveOnlineMarketGroupId" />
+            </Principal>
+            <Dependent Role="EveOnlineMarketGroup1">
+              <PropertyRef Name="ParentEveOnlineMarketGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineType_EveOnlineMarketGroup">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineMarketGroup" Role="EveOnlineMarketGroup" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineType" Role="EveOnlineType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineMarketGroup">
+              <PropertyRef Name="EveOnlineMarketGroupId" />
+            </Principal>
+            <Dependent Role="EveOnlineType">
+              <PropertyRef Name="EveOnlineMarketGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineType_EveOnlineRace">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineRace" Role="EveOnlineRace" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineType" Role="EveOnlineType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineRace">
+              <PropertyRef Name="EveOnlineRaceId" />
+            </Principal>
+            <Dependent Role="EveOnlineType">
+              <PropertyRef Name="EveOnlineRaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KillLogAttacker_KillLog">
+          <End Type="FallenNovaDevelopmentModel.KillLog" Role="KillLog" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.KillLogAttacker" Role="KillLogAttacker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KillLog">
+              <PropertyRef Name="KillLogId" />
+            </Principal>
+            <Dependent Role="KillLogAttacker">
+              <PropertyRef Name="KillLogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KillLogItem_KillLog">
+          <End Type="FallenNovaDevelopmentModel.KillLog" Role="KillLog" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.KillLogItem" Role="KillLogItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KillLog">
+              <PropertyRef Name="KillLogId" />
+            </Principal>
+            <Dependent Role="KillLogItem">
+              <PropertyRef Name="KillLogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_Role">
+          <End Type="FallenNovaDevelopmentModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.UserRole" Role="UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_1_AddedByUser">
+          <End Type="FallenNovaDevelopmentModel.User" Role="User" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.User" Role="User1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="AddedByUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_2_ModifiedByUser">
+          <End Type="FallenNovaDevelopmentModel.User" Role="User" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.User" Role="User1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="ModifiedByUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_UserStatus">
+          <End Type="FallenNovaDevelopmentModel.UserStatus" Role="UserStatu" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserStatu">
+              <PropertyRef Name="UserStatusId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLog_User">
+          <End Type="FallenNovaDevelopmentModel.User" Role="User" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.UserLog" Role="UserLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserLog">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole_User">
+          <End Type="FallenNovaDevelopmentModel.User" Role="User" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.UserRole" Role="UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLog_UserLogType">
+          <End Type="FallenNovaDevelopmentModel.UserLogType" Role="UserLogType" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.UserLog" Role="UserLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserLogType">
+              <PropertyRef Name="UserLogTypeId" />
+            </Principal>
+            <Dependent Role="UserLog">
+              <PropertyRef Name="UserLogTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLog_2_ActionAgainstUser">
+          <End Type="FallenNovaDevelopmentModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="FallenNovaDevelopmentModel.UserLog" Role="UserLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserLog">
+              <PropertyRef Name="ActionAgainstUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CharacterEveOnlineSkill">
+          <Key>
+            <PropertyRef Name="CharacterSkillId" />
+          </Key>
+          <Property Type="Int32" Name="CharacterSkillId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CharacterId" Nullable="false" />
+          <Property Type="Int32" Name="EveOnlineSkillId" Nullable="false" />
+          <Property Type="Byte" Name="Rank" Nullable="false" />
+          <NavigationProperty Name="Character" Relationship="FallenNovaDevelopmentModel.FK_CharacterEveOnlineSkill_Character" FromRole="CharacterEveOnlineSkill" ToRole="Character" />
+          <NavigationProperty Name="EveOnlineSkill" Relationship="FallenNovaDevelopmentModel.FK_CharacterEveOnlineSkill_EveOnlineSkill" FromRole="CharacterEveOnlineSkill" ToRole="EveOnlineSkill" />
+        </EntityType>
+        <EntityType Name="EveOnlineRequiredSkill">
+          <Key>
+            <PropertyRef Name="EveOnlineRequiredSkillId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineRequiredSkillId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="EveOnlineSkillId" Nullable="false" />
+          <Property Type="Int32" Name="RequiredEveOnlineSkillId" Nullable="false" />
+          <Property Type="Int32" Name="RequiredSkillLevel" Nullable="false" />
+          <NavigationProperty Name="EveOnlineSkill" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineRequiredSkill_1_EveOnlineSkill" FromRole="EveOnlineRequiredSkill" ToRole="EveOnlineSkill" />
+          <NavigationProperty Name="RequiredEveOnlineSkill" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineRequiredSkill_2_RequiredEveOnlineSkill" FromRole="EveOnlineRequiredSkill" ToRole="EveOnlineSkill" />
+        </EntityType>
+        <EntityType Name="EveOnlineSkill">
+          <Key>
+            <PropertyRef Name="EveOnlineSkillId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineSkillId" Nullable="false" />
+          <Property Type="Int32" Name="EveOnlineSkillGroupId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Rank" Nullable="false" />
+          <Property Type="Int32" Name="PrimaryEveOnlineAttributeId" Nullable="false" />
+          <Property Type="Int32" Name="SecondaryEveOnlineAttributeId" Nullable="false" />
+          <NavigationProperty Name="CharacterEveOnlineSkills" Relationship="FallenNovaDevelopmentModel.FK_CharacterEveOnlineSkill_EveOnlineSkill" FromRole="EveOnlineSkill" ToRole="CharacterEveOnlineSkill" />
+          <NavigationProperty Name="PrimaryEveOnlineAttribute" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineSkill_1_PrimaryEveOnlineAttribute" FromRole="EveOnlineSkill" ToRole="EveOnlineAttribute" />
+          <NavigationProperty Name="SecondaryEveOnlineAttribute" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineSkill_2_SecondaryEveOnlineAttribute" FromRole="EveOnlineSkill" ToRole="EveOnlineAttribute" />
+          <NavigationProperty Name="EveOnlineRequiredSkills" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineRequiredSkill_1_EveOnlineSkill" FromRole="EveOnlineSkill" ToRole="EveOnlineRequiredSkill" />
+          <NavigationProperty Name="EveOnlineRequiredSkills1" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineRequiredSkill_2_RequiredEveOnlineSkill" FromRole="EveOnlineSkill" ToRole="EveOnlineRequiredSkill" />
+          <NavigationProperty Name="EveOnlineSkillGroup" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineSkill_EveOnlineSkillGroup" FromRole="EveOnlineSkill" ToRole="EveOnlineSkillGroup" />
+        </EntityType>
+        <EntityType Name="EveOnlineSkillGroup">
+          <Key>
+            <PropertyRef Name="EveOnlineSkillGroupId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineSkillGroupId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EveOnlineSkills" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineSkill_EveOnlineSkillGroup" FromRole="EveOnlineSkillGroup" ToRole="EveOnlineSkill" />
+        </EntityType>
+        <EntityType Name="EveOnlineSkillTree">
+          <Key>
+            <PropertyRef Name="EveOnlineSkillTreeId" />
+          </Key>
+          <Property Type="Int32" Name="EveOnlineSkillTreeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Xml" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="AddedByUserId" Nullable="false" />
+          <Property Type="DateTime" Name="AddedDateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="FallenNovaDevelopmentModel.FK_EveOnlineSkillTree_User" FromRole="EveOnlineSkillTree" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_CharacterEveOnlineSkill_Character">
+          <End Type="FallenNovaDevelopmentModel.Character" Role="Character" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.CharacterEveOnlineSkill" Role="CharacterEveOnlineSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Character">
+              <PropertyRef Name="CharacterId" />
+            </Principal>
+            <Dependent Role="CharacterEveOnlineSkill">
+              <PropertyRef Name="CharacterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CharacterEveOnlineSkill_EveOnlineSkill">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineSkill" Role="EveOnlineSkill" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.CharacterEveOnlineSkill" Role="CharacterEveOnlineSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineSkill">
+              <PropertyRef Name="EveOnlineSkillId" />
+            </Principal>
+            <Dependent Role="CharacterEveOnlineSkill">
+              <PropertyRef Name="EveOnlineSkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineSkill_1_PrimaryEveOnlineAttribute">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineAttribute" Role="EveOnlineAttribute" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineSkill" Role="EveOnlineSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineAttribute">
+              <PropertyRef Name="EveOnlineAttributeId" />
+            </Principal>
+            <Dependent Role="EveOnlineSkill">
+              <PropertyRef Name="PrimaryEveOnlineAttributeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineSkill_2_SecondaryEveOnlineAttribute">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineAttribute" Role="EveOnlineAttribute" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineSkill" Role="EveOnlineSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineAttribute">
+              <PropertyRef Name="EveOnlineAttributeId" />
+            </Principal>
+            <Dependent Role="EveOnlineSkill">
+              <PropertyRef Name="SecondaryEveOnlineAttributeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineRequiredSkill_1_EveOnlineSkill">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineSkill" Role="EveOnlineSkill" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineRequiredSkill" Role="EveOnlineRequiredSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineSkill">
+              <PropertyRef Name="EveOnlineSkillId" />
+            </Principal>
+            <Dependent Role="EveOnlineRequiredSkill">
+              <PropertyRef Name="EveOnlineSkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineRequiredSkill_2_RequiredEveOnlineSkill">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineSkill" Role="EveOnlineSkill" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineRequiredSkill" Role="EveOnlineRequiredSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineSkill">
+              <PropertyRef Name="EveOnlineSkillId" />
+            </Principal>
+            <Dependent Role="EveOnlineRequiredSkill">
+              <PropertyRef Name="RequiredEveOnlineSkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineSkill_EveOnlineSkillGroup">
+          <End Type="FallenNovaDevelopmentModel.EveOnlineSkillGroup" Role="EveOnlineSkillGroup" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineSkill" Role="EveOnlineSkill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EveOnlineSkillGroup">
+              <PropertyRef Name="EveOnlineSkillGroupId" />
+            </Principal>
+            <Dependent Role="EveOnlineSkill">
+              <PropertyRef Name="EveOnlineSkillGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EveOnlineSkillTree_User">
+          <End Type="FallenNovaDevelopmentModel.User" Role="User" Multiplicity="1" />
+          <End Type="FallenNovaDevelopmentModel.EveOnlineSkillTree" Role="EveOnlineSkillTree" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="EveOnlineSkillTree">
+              <PropertyRef Name="AddedByUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FallenNovaDevelopmentModelStoreContainer" CdmEntityContainer="FallenNovaContext">
+          <EntitySetMapping Name="Characters">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.Character">
+              <MappingFragment StoreEntitySet="Character">
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+                <ScalarProperty Name="AddedDateTime" ColumnName="AddedDateTime" />
+                <ScalarProperty Name="CharacterName" ColumnName="CharacterName" />
+                <ScalarProperty Name="VCode" ColumnName="VCode" />
+                <ScalarProperty Name="KeyId" ColumnName="KeyId" />
+                <ScalarProperty Name="CorporationId" ColumnName="CorporationId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CharacterId" ColumnName="CharacterId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactUsLogs">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.ContactUsLog">
+              <MappingFragment StoreEntitySet="ContactUsLog">
+                <ScalarProperty Name="AddedDateTime" ColumnName="AddedDateTime" />
+                <ScalarProperty Name="AddedByUserId" ColumnName="AddedByUserId" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ContactUsLogId" ColumnName="ContactUsLogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Corporations">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.Corporation">
+              <MappingFragment StoreEntitySet="Corporation">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CorporationId" ColumnName="CorporationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineAttributes">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineAttribute">
+              <MappingFragment StoreEntitySet="EveOnlineAttribute">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EveOnlineIconId" ColumnName="EveOnlineIconId" />
+                <ScalarProperty Name="EveOnlineAttributeId" ColumnName="EveOnlineAttributeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineBloodlines">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineBloodline">
+              <MappingFragment StoreEntitySet="EveOnlineBloodline">
+                <ScalarProperty Name="ShortFemaleDescription" ColumnName="ShortFemaleDescription" />
+                <ScalarProperty Name="ShortMaleDescription" ColumnName="ShortMaleDescription" />
+                <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+                <ScalarProperty Name="FemaleDescription" ColumnName="FemaleDescription" />
+                <ScalarProperty Name="MaleDescription" ColumnName="MaleDescription" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EveOnlineIconId" ColumnName="EveOnlineIconId" />
+                <ScalarProperty Name="EveOnlineRaceId" ColumnName="EveOnlineRaceId" />
+                <ScalarProperty Name="EveOnlineBloodlineId" ColumnName="EveOnlineBloodlineId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineCategories">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineCategory">
+              <MappingFragment StoreEntitySet="EveOnlineCategory">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EveOnlineIconId" ColumnName="EveOnlineIconId" />
+                <ScalarProperty Name="EveOnlineCategoryId" ColumnName="EveOnlineCategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineConstellations">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineConstellation">
+              <MappingFragment StoreEntitySet="EveOnlineConstellation">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EveOnlineRegionId" ColumnName="EveOnlineRegionId" />
+                <ScalarProperty Name="EveOnlineConstellationId" ColumnName="EveOnlineConstellationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineFactions">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineFaction">
+              <MappingFragment StoreEntitySet="EveOnlineFaction">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EveOnlineIconId" ColumnName="EveOnlineIconId" />
+                <ScalarProperty Name="EveOnlineFactionId" ColumnName="EveOnlineFactionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineGroups">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineGroup">
+              <MappingFragment StoreEntitySet="EveOnlineGroup">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EveOnlineIconId" ColumnName="EveOnlineIconId" />
+                <ScalarProperty Name="EveOnlineCategoryId" ColumnName="EveOnlineCategoryId" />
+                <ScalarProperty Name="EveOnlineGroupId" ColumnName="EveOnlineGroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineIcons">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineIcon">
+              <MappingFragment StoreEntitySet="EveOnlineIcon">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FileNameWithoutExtension" ColumnName="FileNameWithoutExtension" />
+                <ScalarProperty Name="EveOnlineIconId" ColumnName="EveOnlineIconId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineMarketGroups">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineMarketGroup">
+              <MappingFragment StoreEntitySet="EveOnlineMarketGroup">
+                <ScalarProperty Name="HasTypes" ColumnName="HasTypes" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EveOnlineIconId" ColumnName="EveOnlineIconId" />
+                <ScalarProperty Name="ParentEveOnlineMarketGroupId" ColumnName="ParentEveOnlineMarketGroupId" />
+                <ScalarProperty Name="EveOnlineMarketGroupId" ColumnName="EveOnlineMarketGroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineRaces">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineRace">
+              <MappingFragment StoreEntitySet="EveOnlineRace">
+                <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EveOnlineIconId" ColumnName="EveOnlineIconId" />
+                <ScalarProperty Name="EveOnlineRaceId" ColumnName="EveOnlineRaceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineRegions">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineRegion">
+              <MappingFragment StoreEntitySet="EveOnlineRegion">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EveOnlineFactionId" ColumnName="EveOnlineFactionId" />
+                <ScalarProperty Name="EveOnlineRegionId" ColumnName="EveOnlineRegionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineSolarSystems">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineSolarSystem">
+              <MappingFragment StoreEntitySet="EveOnlineSolarSystem">
+                <ScalarProperty Name="Security" ColumnName="Security" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EveOnlineConstellationId" ColumnName="EveOnlineConstellationId" />
+                <ScalarProperty Name="EveOnlineSolarSystemId" ColumnName="EveOnlineSolarSystemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineTypes">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineType">
+              <MappingFragment StoreEntitySet="EveOnlineType">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EveOnlineMarketGroupId" ColumnName="EveOnlineMarketGroupId" />
+                <ScalarProperty Name="EveOnlineRaceId" ColumnName="EveOnlineRaceId" />
+                <ScalarProperty Name="EveOnlineIconId" ColumnName="EveOnlineIconId" />
+                <ScalarProperty Name="EveOnlineGroupId" ColumnName="EveOnlineGroupId" />
+                <ScalarProperty Name="EveOnlineTypeId" ColumnName="EveOnlineTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KillLogs">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.KillLog">
+              <MappingFragment StoreEntitySet="KillLog">
+                <ScalarProperty Name="VictimCharacterId" ColumnName="VictimCharacterId" />
+                <ScalarProperty Name="KillDateTime" ColumnName="KillDateTime" />
+                <ScalarProperty Name="SolarSystemId" ColumnName="SolarSystemId" />
+                <ScalarProperty Name="KillLogId" ColumnName="KillLogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KillLogAttackers">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.KillLogAttacker">
+              <MappingFragment StoreEntitySet="KillLogAttacker">
+                <ScalarProperty Name="CharacterId" ColumnName="CharacterId" />
+                <ScalarProperty Name="KillLogId" ColumnName="KillLogId" />
+                <ScalarProperty Name="KillLogAttackerId" ColumnName="KillLogAttackerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KillLogItems">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.KillLogItem">
+              <MappingFragment StoreEntitySet="KillLogItem">
+                <ScalarProperty Name="QuantityDestroyed" ColumnName="QuantityDestroyed" />
+                <ScalarProperty Name="QuantityDropped" ColumnName="QuantityDropped" />
+                <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />
+                <ScalarProperty Name="KillLogId" ColumnName="KillLogId" />
+                <ScalarProperty Name="KillLogItemId" ColumnName="KillLogItemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="LastSuccessfulAuthenticationDateTime" ColumnName="LastSuccessfulAuthenticationDateTime" />
+                <ScalarProperty Name="LastSuccessfulLoginDateTime" ColumnName="LastSuccessfulLoginDateTime" />
+                <ScalarProperty Name="UnsuccessfulLoginAttempts" ColumnName="UnsuccessfulLoginAttempts" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
+                <ScalarProperty Name="ModifiedByUserId" ColumnName="ModifiedByUserId" />
+                <ScalarProperty Name="AddedDateTime" ColumnName="AddedDateTime" />
+                <ScalarProperty Name="AddedByUserId" ColumnName="AddedByUserId" />
+                <ScalarProperty Name="HashedPassword" ColumnName="HashedPassword" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserStatusId" ColumnName="UserStatusId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserLogs">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.UserLog">
+              <MappingFragment StoreEntitySet="UserLog">
+                <ScalarProperty Name="AddedDateTime" ColumnName="AddedDateTime" />
+                <ScalarProperty Name="ActionAgainstUserId" ColumnName="ActionAgainstUserId" />
+                <ScalarProperty Name="UserLogTypeId" ColumnName="UserLogTypeId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserLogId" ColumnName="UserLogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserLogTypes">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.UserLogType">
+              <MappingFragment StoreEntitySet="UserLogType">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="UserLogTypeId" ColumnName="UserLogTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserStatuses">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.UserStatus">
+              <MappingFragment StoreEntitySet="UserStatus">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="UserStatusId" ColumnName="UserStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterEveOnlineSkills">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.CharacterEveOnlineSkill">
+              <MappingFragment StoreEntitySet="CharacterEveOnlineSkill">
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="EveOnlineSkillId" ColumnName="EveOnlineSkillId" />
+                <ScalarProperty Name="CharacterId" ColumnName="CharacterId" />
+                <ScalarProperty Name="CharacterSkillId" ColumnName="CharacterSkillId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineRequiredSkills">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineRequiredSkill">
+              <MappingFragment StoreEntitySet="EveOnlineRequiredSkill">
+                <ScalarProperty Name="RequiredSkillLevel" ColumnName="RequiredSkillLevel" />
+                <ScalarProperty Name="RequiredEveOnlineSkillId" ColumnName="RequiredEveOnlineSkillId" />
+                <ScalarProperty Name="EveOnlineSkillId" ColumnName="EveOnlineSkillId" />
+                <ScalarProperty Name="EveOnlineRequiredSkillId" ColumnName="EveOnlineRequiredSkillId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineSkills">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineSkill">
+              <MappingFragment StoreEntitySet="EveOnlineSkill">
+                <ScalarProperty Name="SecondaryEveOnlineAttributeId" ColumnName="SecondaryEveOnlineAttributeId" />
+                <ScalarProperty Name="PrimaryEveOnlineAttributeId" ColumnName="PrimaryEveOnlineAttributeId" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EveOnlineSkillGroupId" ColumnName="EveOnlineSkillGroupId" />
+                <ScalarProperty Name="EveOnlineSkillId" ColumnName="EveOnlineSkillId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineSkillGroups">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineSkillGroup">
+              <MappingFragment StoreEntitySet="EveOnlineSkillGroup">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EveOnlineSkillGroupId" ColumnName="EveOnlineSkillGroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EveOnlineSkillTrees">
+            <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.EveOnlineSkillTree">
+              <MappingFragment StoreEntitySet="EveOnlineSkillTree">
+                <ScalarProperty Name="AddedDateTime" ColumnName="AddedDateTime" />
+                <ScalarProperty Name="AddedByUserId" ColumnName="AddedByUserId" />
+                <ScalarProperty Name="Xml" ColumnName="Xml" />
+                <ScalarProperty Name="EveOnlineSkillTreeId" ColumnName="EveOnlineSkillTreeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

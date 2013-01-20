@@ -1,0 +1,22 @@
+﻿
+@helper FormatTitle(
+    string title)
+{
+    if (!string.IsNullOrWhiteSpace(title))
+    {
+        @title <text> - Fallen Nova</text>
+    }
+    else
+    {
+        <text>Fallen Nova</text>
+    }
+}
+
+@* TODO: Convert to a Html Helper so it can handle the li classes. 
+@helper GenerateIcon(
+    string iconClassName, 
+    string relativeUrl)
+{
+    <i class="icon-@iconClassName @if (Request.Url.AbsolutePath.Contains(relativeUrl)) {<text>icon-white</text>}"></i>
+}
+*@

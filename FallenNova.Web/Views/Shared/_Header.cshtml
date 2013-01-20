@@ -1,0 +1,100 @@
+﻿@inherits WebViewPage
+
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+
+<nav>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                
+                <a class="brand" href="@Url.Action("Index", "Home")" title="View the Fallen Nova homepage">Fallen Nova</a>
+                          
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a href="@Url.Action("Index", "MySpace", new { Area = "Secure" })"><i class="icon-user icon-white"></i> My Space</a></li>
+                        <li><a href="@Url.Action("Index", "Corp", new { Area = "Secure" })"><i class="icon-fire icon-white"></i> Corp</a></li>
+                        <li><a href="@Url.Action("Index", "ItemDatabase", new { Area = "Secure" })"><i class="icon-list-alt icon-white"></i> Item Database</a></li>
+                        <li><a href="@Url.Action("Index", "Forum", new { Area = "Secure" })"><i class="icon-th-list icon-white"></i> Forum</a></li>
+                
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-bookmark icon-white"></i> Bookmarks <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><i class="icon-user"></i> John Smith (Member)</a></li>
+                                <li><a href="#"><i class="icon-plane"></i> Deimos (Gallente Ship)</a></li>
+                                <li><a href="#"><i class="icon-book"></i> New User Policies (Forum Post)</a></li>
+                                <li class="divider"></li>
+                                <li class="nav-header">Options</li>
+                                <li><a href="#"><i class="icon-edit"></i> Edit Bookmarks</a></li>
+                            </ul>
+                        </li>
+                        
+                        if (User.IsInRole("Administrator"))
+                        {
+                            <li class="dropdown">
+                                <a href="@Url.Action("Index", "Administration", new { Area = "Secure" })" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-wrench icon-white"></i> Admin <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("Index", "Administration", new { Area = "Secure" })"><i class="icon-briefcase"></i> Administration</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="@Url.Action("SkillTree", "Administration", new { Area = "Secure" })"><i class="icon-th-large"></i> Skill Tree</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="@Url.Action("Index", "Users", new { Area = "Secure" })"><i class="icon-user"></i> Users</a></li>
+                                    <li class="divider"></li>
+                                    <li class="nav-header">Diagnostics</li>
+                                    <li><a href="@Url.Action("Ninject", "Administration", new { Area = "Secure" })"><i class="icon-link"></i> Ninject</a></li>
+                                </ul>
+                            </li>
+                        }
+                            
+                        <li>@Html.ActionLink("Log off", "LogOff", "Home", new { Area = "Public" }, null)</li>
+                    }
+                    else
+                    { 
+                        <li><a href="@Url.Action("AboutUs", "Home")"><i class="icon-info-sign icon-white"></i> About Us</a></li>
+                        <li><a href="@Url.Action("Join", "Home")"><i class="icon-list-alt icon-white"></i> Join</a></li>
+                        <li><a href="@Url.Action("ContactUs", "Home")"><i class="icon-envelope icon-white"></i> Contact Us</a></li>
+                    }
+
+                    </ul>
+                    
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <section id="search">
+                            @using (Html.BeginForm("Index", "Search", new { Area = "Secure" }, FormMethod.Post, new { @class = "navbar-form pull-right" }))
+                            {
+                                <input class="span2" type="text" placeholder="Search...">
+                                <button type="submit" class="btn"><i class="icon-search"></i></button>
+                            }
+                        </section>
+                    }
+                    else
+                    { 
+                        <section id="login">
+                            @using (Html.BeginForm("Login", "Home", new { Area = "Public" }, FormMethod.Post, new { @class = "navbar-form pull-right" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <input class="span2" type="email" name="EmailAddress" placeholder="Email">
+                                <input class="span2" type="password" name="Password" placeholder="Password">
+                                <button type="submit" class="btn">Login</button>
+                            }
+                        </section>
+                    }
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+</nav>
+

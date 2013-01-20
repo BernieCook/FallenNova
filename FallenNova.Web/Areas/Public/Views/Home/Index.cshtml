@@ -1,0 +1,51 @@
+﻿<div class="hero-unit">
+    <header>
+        <h1>Fallen Nova</h1>
+    </header>
+    <p>
+        A personal work in progress MVC4 web solution which utilises a number of modern frameworks and assemblies;
+        AutoMapper, ASP.NET MVC 4, Bootstrap, BCrypt.Net, C#, ELMAH, Entity Framework, Git Extensions, HTML 5, jQuery, glimpse, Modernizr, Ninject, nUnit, ReSharper, SQL 2008 R2 and Visual Studio 2012.
+    </p>
+    <p>
+        @if (!User.Identity.IsAuthenticated)
+        {
+            @Html.ActionLink("Log In", "Login", null, null, new { @class = "btn btn-primary btn-large" })
+        }
+        else
+        {
+            <a href="#" class="btn btn-primary btn-large disabled">Log In</a>
+        }
+    </p>
+</div>
+
+<div class="row">
+            
+    <div class="span4">
+        <h2>Security</h2>
+        <ul>
+            <li>Using anti-forgery tokens on log in to avoid <abbr title="cross-site request forgery ">c-surf</abbr> attacks</li>
+            <li>Using a number of Anti-XSS Razor calls</li>
+            <li>Utilising the .NET 4.5 claims security features</li>
+        </ul>
+    </div>    
+
+    <div class="span4">
+        <h2>Data</h2>
+        <ul>
+            <li>SQL 2008 R2</li>
+            <li>Entity Framework 6 Pre-Release<br/>
+                <em>So I can utilise the Async calls</em>
+            </li>
+        </ul>
+    </div>
+
+    <div class="span4">
+        <h2><abbr title="Error Logging Modules and Handlers">ELMAH</abbr></h2>
+        EMLAH a framework that tackles errors that fall through the cracks, i.e. unhandled errors. 
+        <a href="http://www.devcurry.com/2012/05/error-handling-elmah-in-aspnet-mvc.html">Setting up ELMAH logging to SQL</a>. And setting
+        up custom error handling in MVC so ELMAH can do it's job and the user sees a nicely formatted page - 
+        see <a href="http://www.hanselman.com/blog/ELMAHErrorLoggingModulesAndHandlersForASPNETAndMVCToo.aspx">this article</a>
+    </div>
+    
+</div>
+

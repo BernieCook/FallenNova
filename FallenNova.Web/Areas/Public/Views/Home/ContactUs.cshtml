@@ -1,0 +1,48 @@
+@model FallenNova.Web.Areas.Public.Models.ContactUsModel
+
+@{
+    ViewBag.Title = "Contact Us";
+}
+
+<header>
+    <h2>
+        <i class="icon-large envelope"></i> Contact Us
+    </h2>
+</header>
+
+<hr/>
+
+<p>Enter your message below. Name and email address are optional but it helps if you supply them in.</p>
+
+@Bootstrap.Validation("An error occurred when submitting your message. Please correct the errors listed and try again.", ViewData.ModelState)
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+   
+    <div class="control-group">
+        @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+        <div class="controls">
+            @* Maxlength is manually set as this is a public facing page. *@
+            @Html.TextBoxFor(m => m.Name, new { @class = "input-large", @placeholder = "Name", maxlength = "100" })
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(m => m.EmailAddress, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(m => m.EmailAddress, new { @class = "input-xlarge", @placeholder = "Email", maxlength = "200" })
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(m => m.Message, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextAreaFor(m => m.Message, new { @class = "input-xlarge", @placeholder = "Message", maxlength = "200", rows = "5" })
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </div>
+    </div>
+}
+

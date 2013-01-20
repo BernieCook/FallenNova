@@ -1,0 +1,28 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.ItemDatabaseModel.SolarSystemModel
+
+@using FallenNova.Web.Constants
+
+@{
+    ViewBag.Title = @Model.Name;
+}
+
+@Html.Partial("_ItemDatabaseHeader")
+
+<hgroup>
+    <h3>Solar System</h3>
+
+    <h4>@Model.Name</h4>
+</hgroup>
+
+<p>
+    New Eden contains over five thousand known solar systems, with a glut of new ones having recently been discovered
+    (discovery in this instance being defined by the ability to squeeze through both ends of a wormhole without getting killed).
+</p>
+
+<p>
+    Security: @Model.Security.ToString(Format.Security)<br />
+    Constellation: @Html.ActionLink(Model.ConstellationName, "Constellation", "ItemDatabase", new { id = Model.ConstellationId, Area = "Secure" }, null)<br />
+    Region: @Html.ActionLink(Model.RegionName, "Region", "ItemDatabase", new { id = Model.RegionId, Area = "Secure" }, null)
+</p>
+
+

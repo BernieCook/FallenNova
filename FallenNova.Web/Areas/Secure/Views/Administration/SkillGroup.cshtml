@@ -1,0 +1,26 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.AdministrationModel.SkillGroupModel
+
+@{
+    ViewBag.Title = @Model.Name;
+}
+
+@Html.Partial("_AdministrationHeader")
+
+<hgroup>
+    <h2>Skill Group</h2>
+    
+    <h3>@Model.Name</h3>
+</hgroup>
+
+<table class="table table-bordered table-striped table-condensed">
+    
+    @foreach (var skill in Model.Skills) 
+    {
+        <tr>
+            <td>@skill.Id</td>
+            <td>@Html.ActionLink(skill.Name, "Skill", new { id = skill.Id })</td>
+            <td>@Html.ActionLink("View Details", "Skill", new { id = skill.Id })</td>
+        </tr>
+    }
+     
+</table>

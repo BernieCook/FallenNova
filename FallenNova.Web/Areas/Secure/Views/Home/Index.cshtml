@@ -1,0 +1,61 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.HomeModel.HomeModel
+
+@{
+    ViewBag.Title = "Fallen Nova";
+}
+
+<div class="row">
+    
+    <div class="span4">
+        <h2>Latest Members</h2>
+        
+        <ul>
+            @foreach (var item in Model.LatestUsers) 
+            {
+                <li>@item.FullName</li>
+            }  
+        </ul>
+
+    </div>
+
+    <div class="span4">
+        <h2>Popular Ships</h2>
+        <ul>
+            @foreach (var item in Model.LatestShips) 
+            {
+                <li>@item.FullName</li>
+            }  
+        </ul>
+    </div>
+
+    <div class="span4">
+        <h2>Random Items</h2>
+        <ul>
+            @foreach (var item in Model.LatestItems) 
+            {
+                <li>@item.FullName</li>
+            }  
+        </ul>
+    </div>
+
+</div>
+
+<div class="row">
+    
+    <div class="span6">
+        <h2>Dispose</h2>
+        <p>
+            <span class="label label-info">Heads up!</span> 
+            Review the UoW dispose calls.
+        </p>
+    </div>
+
+    <div class="span6">
+        <h2>Links</h2>
+        <ul>
+            <li><a href="/jita/elmah.axd"><abbr title="Error Logging Modules and Handlers">ELMAH</abbr></a></li>
+            <li><a href="glimpse.axd">Glimpse</a></li>
+        </ul>
+    </div>
+
+</div>

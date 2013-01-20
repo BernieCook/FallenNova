@@ -1,0 +1,45 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.MySpaceModel.EditDetailsModel
+
+@{
+    ViewBag.Title = "Edit Details";
+}
+
+@Html.Partial("_MySpaceHeader")
+
+<h3>Edit Details</h3>
+
+<p>
+    <span class="label label-info">Heads up!</span> Need to correct the minor issue with updating a user and not their role. 
+</p>
+
+@Bootstrap.Validation("The update was unsuccessful. Please correct the errors listed and try again.", ViewData.ModelState)
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "MySpace")) 
+{
+    <div class="control-group">
+        @Html.LabelFor(m => m.FirstName, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "input-xlarge" })
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(m => m.Surname, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(m => m.Surname, new { @class = "input-xlarge" })
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(m => m.EmailAddress, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(m => m.EmailAddress, new { @class = "input-xxlarge" })
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn btn-primary">Edit Details</button>
+            <a href="@Url.Action("Index", "MySpace", new { Area = "Secure" })" class="btn">Cancel</a>
+        </div>
+    </div>
+}
+
+

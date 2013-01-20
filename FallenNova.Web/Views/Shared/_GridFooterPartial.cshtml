@@ -1,0 +1,58 @@
+﻿@inherits System.Web.Mvc.WebViewPage<FallenNova.Web.Areas.Shared.Models.PagingInfo>
+
+@using FallenNova.Web.HtmlHelpers
+
+<div class="pagination">
+    <ul>
+
+        @if (Model.TotalPages > 1)
+        {
+            if (@Model.PageIndex > Model.FooterPageCount)
+            {
+                @Html.SearchRouteLink(
+                    "First", 
+                    Model.RouteName, 
+                    Model.RouteValuesFirst,
+                    true)
+       
+                @Html.SearchRouteLink(
+                    "...", 
+                    Model.RouteName,
+                    Model.RouteValuesPrevious,
+                    true)
+            }
+
+            for (int page = Model.FooterPageStart; page <= Model.FooterPageEnd; page++)
+            {
+                if (page == Model.PageIndex)
+                {
+                    <li class="active"><a href="#">@page</a></li>
+                }
+                else  
+                {
+                    @Html.SearchRouteLink(
+                        page.ToString(), 
+                        Model.RouteName, 
+                        new { pageIndex = page, pageSize = Model.PageSize, sortBy = Model.SortBy, sortAscending = Model.SortAscending },
+                        true)
+                }
+            }
+
+            if (@Model.FooterPageStart <= (Model.TotalPages - Model.FooterPageCount))
+            { 
+                @Html.SearchRouteLink(
+                    "...", 
+                    Model.RouteName, 
+                    Model.RouteValuesNext,
+                    true)
+        
+                @Html.SearchRouteLink(
+                    "Last",
+                    Model.RouteName,
+                    Model.RouteValuesLast,
+                    true)
+            }
+        }
+
+    </ul>
+</div>

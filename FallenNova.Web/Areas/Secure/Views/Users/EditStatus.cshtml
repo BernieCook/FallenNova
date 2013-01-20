@@ -1,0 +1,47 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.UsersModel.EditStatusUserModel
+
+@{
+    ViewBag.Title = "Edit User Status";
+}
+
+@Html.Partial("_UsersHeader")
+
+<h3>Edit User's Status</h3>
+
+<p>
+    Edit away.
+</p>
+
+@Bootstrap.Validation("The user's status wasn't updated successfully. Please correct the errors listed and try again.", ViewData.ModelState)
+
+@using (Html.BeginForm((string)ViewBag.FormAction, "Users")) 
+{
+    @Html.HiddenFor(m => m.UserId)
+
+    <div class="control-group">
+        Name:
+        <div class="controls">
+            @Model.FullName
+        </div>
+    </div>
+    <div class="control-group">
+        Status:
+        <div class="controls">
+            <label class="radio">
+                @Html.RadioButtonWithLabelFor(m => m.UserStatusId, 1, "Active", "Can login")
+            </label>
+            <label class="radio">
+                @Html.RadioButtonWithLabelFor(m => m.UserStatusId, 2, "Disabled", "Can't login, basically implies they've been temporarily banned")
+            </label>
+            <label class="radio">
+                @Html.RadioButtonWithLabelFor(m => m.UserStatusId, 3, "Deleted", "Can't login, basically implies they've been permanently banned")
+            </label> 
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn btn-primary">Edit User's Status</button>
+            <a href="@Html.ActionLink("Cancel", "Details", new { id = Model.UserId })" class="btn">Cancel</a>
+        </div>
+    </div>
+}

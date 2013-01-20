@@ -1,0 +1,29 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.UsersModel.EditUserSuccessfulModel
+
+@{
+    ViewBag.Title = "Edit User Successful";
+}
+
+@Html.Partial("_UsersHeader")
+
+<hgroup>
+    <h3>Edit User</h3>
+
+    <h4>Successful</h4>
+</hgroup>
+
+<p>
+    The user change was successfully successful.
+</p>
+
+<p>
+    <b>@Model.FirstNameWithApostrope</b> was successfully updated.
+</p>
+
+<p>
+    You have a few options availalble, you can 
+    @Html.ActionLink("edit/view the user's details", "Details", new { id = Model.UserId }),
+    @Html.ActionLink("add a user", "Add", "Users") or return to the 
+    @Html.ActionLink("User home page", "Index", "Users") page.
+</p>
+

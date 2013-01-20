@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="667d12e4dffa44d6b87c6aa2be466ecf" Name="Diagram" ZoomLevel="101">
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.Character" Width="1.5" PointX="8.25" PointY="11.125" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.ContactUsLog" Width="1.5" PointX="5.25" PointY="19.125" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.Corporation" Width="1.5" PointX="6" PointY="15.125" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineAttribute" Width="1.5" PointX="6" PointY="0.75" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineBloodline" Width="1.5" PointX="8.25" PointY="18.5" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineCategory" Width="1.5" PointX="6" PointY="28.125" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineConstellation" Width="1.5" PointX="10.5" PointY="25.25" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineFaction" Width="1.5" PointX="6" PointY="25.125" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineGroup" Width="1.5" PointX="11.25" PointY="16.375" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineIcon" Width="1.5" PointX="3.75" PointY="3" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineMarketGroup" Width="1.5" PointX="6" PointY="31" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineRace" Width="1.5" PointX="6" PointY="34.75" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineRegion" Width="1.5" PointX="8.25" PointY="25.25" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineSolarSystem" Width="1.5" PointX="12.75" PointY="25.25" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineType" Width="1.5" PointX="13.5" PointY="18.5" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.KillLog" Width="1.5" PointX="10.5" PointY="11.625" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.KillLogAttacker" Width="1.5" PointX="12.75" PointY="13.375" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.KillLogItem" Width="1.5" PointX="12.75" PointY="10.5" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.Role" Width="1.5" PointX="3" PointY="7.125" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.User" Width="1.5" PointX="3" PointY="10" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.UserLog" Width="1.5" PointX="5.25" PointY="11.625" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.UserLogType" Width="1.5" PointX="3" PointY="17.125" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.UserRole" Width="1.5" PointX="5.25" PointY="8.875" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.UserStatus" Width="1.5" PointX="0.75" PointY="12.125" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_Character_Corporation" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_Character_User" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_KillLog_Character" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_ContactUsLog_User" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineAttribute_EveOnlineIcon" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineBloodline_EveOnlineIcon" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineBloodline_EveOnlineRace" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineCategory_EveOnlineIcon" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineGroup_EveOnlineCategory" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineConstellation_EveOnlineRegion" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineSolarSystem_EveOnlineConstellation" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineFaction_EveOnlineIcon" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineRegion_EveOnlineFaction" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineGroup_EveOnlineIcon" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineGroup" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineMarketGroup_EveOnlineIcon" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineRace_EveOnlineIcon" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineIcon" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineMarketGroup_EveOnlineMarketGroup" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineMarketGroup" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineType_EveOnlineRace" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_KillLogAttacker_KillLog" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_KillLogItem_KillLog" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_UserRole_Role" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_User_1_AddedByUser" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_User_2_ModifiedByUser" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_User_UserStatus" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_UserLog_User" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_UserRole_User" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_UserLog_UserLogType" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_UserLog_2_ActionAgainstUser" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.CharacterEveOnlineSkill" Width="1.5" PointX="10.5" PointY="8.75" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineRequiredSkill" Width="2.875" PointX="10.5" PointY="5.75" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineSkill" Width="3" PointX="8.25" PointY="1.125" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineSkillGroup" Width="1.5" PointX="6" PointY="5.25" />
+        <EntityTypeShape EntityType="FallenNovaDevelopmentModel.EveOnlineSkillTree" Width="1.5" PointX="5.25" PointY="22.25" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_CharacterEveOnlineSkill_Character" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_CharacterEveOnlineSkill_EveOnlineSkill" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineSkill_1_PrimaryEveOnlineAttribute" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineSkill_2_SecondaryEveOnlineAttribute" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineRequiredSkill_1_EveOnlineSkill" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineRequiredSkill_2_RequiredEveOnlineSkill" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineSkill_EveOnlineSkillGroup" />
+        <AssociationConnector Association="FallenNovaDevelopmentModel.FK_EveOnlineSkillTree_User" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

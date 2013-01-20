@@ -1,0 +1,44 @@
+﻿@model IEnumerable<FallenNova.Web.Areas.Secure.Models.CorpModel.MembersModel>
+
+@using FallenNova.Web.Areas.Shared.Models
+
+@{
+    ViewBag.Title = "Corp";
+}
+
+@Html.Partial("_CorpHeader")
+
+@if (ViewBag.PagingInfo.TotalResults > 0)
+{
+    @Html.Partial("_GridHeaderPartial", (PagingInfo)ViewBag.PagingInfo)
+    
+    <table class="table table-bordered table-striped table-condensed">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>@Html.RouteLink("Member", "Secure.Data", new { pageIndex = 1, pageSize = ViewBag.PagingInfo.PageSize, sortBy = "Member", sortAscending = ViewBag.MemberSortAscending })</th>
+                <th>@Html.RouteLink("Corporation", "Secure.Data", new { pageIndex = 1, pageSize = ViewBag.PagingInfo.PageSize, sortBy = "Corporation", sortAscending = ViewBag.CorporationSortAscending })</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model) 
+            {
+                <tr>
+                    <td>@item.CharacterId</td>
+                    <td>@item.CharacterName</td>
+                    <td>@item.CorporationName</td>
+                    <td>@Html.ActionLink("View Details", "Details", new { id = item.CharacterId })</td>
+                </tr>
+            }  
+
+        </tbody>  
+    </table>
+
+    @Html.Partial("_GridFooterPartial", (PagingInfo)ViewBag.PagingInfo)
+}
+else
+{
+    <text>No corp members found</text>
+}

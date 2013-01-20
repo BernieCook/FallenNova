@@ -1,0 +1,10 @@
+﻿@inherits System.Web.Mvc.WebViewPage<FallenNova.Web.Areas.Shared.Models.PagingInfo>
+
+@using FallenNova.Web.Constants
+@using FallenNova.Web.HtmlHelpers
+
+Results: @Model.PageStart.ToString(Format.Integer) to @Model.PageEnd.ToString(Format.Integer) (of @Model.TotalResults.ToString(Format.Integer))
+    
+View:
+
+@Html.DropDownList("pageSize", @Model)

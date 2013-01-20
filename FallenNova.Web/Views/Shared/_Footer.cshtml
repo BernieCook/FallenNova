@@ -1,0 +1,18 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+@using FallenNova.Web.HtmlHelpers
+
+<hr>
+
+<footer>
+    <div class="pull-left">
+        @Html.Copyright("Bernie Cook")  
+    </div>
+    
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="pull-right">
+            <button class="btn btn-mini" rel="tooltip" title="Add/remove this page from your bookmarks." id="bookmark"><i class="icon-bookmark"></i> Bookmark</button> 
+        </div>
+    }
+</footer>

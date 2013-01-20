@@ -1,0 +1,71 @@
+﻿@model FallenNova.Web.Areas.Secure.Models.ItemDatabaseModel.ItemDatabaseModel
+
+@using FallenNova.Web.Areas.Shared.Models
+@using FallenNova.Web.Constants
+
+@{
+    ViewBag.Title = "Item Database";
+}
+
+@Html.Partial("_ItemDatabaseHeader")
+
+<h3>Item Database</h3>
+
+@using (Html.BeginRouteForm(RouteNames.Secure.Data, new { pageIndex = 1, pageSize = ViewBag.PagingInfo.PageSize, sortBy = ViewBag.PagingInfo.SortBy, sortAscending = ViewBag.PagingInfo.SortAscending }, FormMethod.Get))
+{
+    <fieldset>
+
+        @Html.LabelFor(m => m.Keywords)
+        @Html.TextBoxFor(m => m.Keywords, new { @class = "input-xlarge" })
+       
+        <label class="checkbox">
+            @Html.BasicCheckBoxFor(m => m.IncludeItems) 
+            @Html.LabelFor(m => m.IncludeItems)
+        </label>
+            
+        <label class="checkbox">
+            @Html.BasicCheckBoxFor(m => m.IncludeGalacticObjects) 
+            @Html.LabelFor(m => m.IncludeGalacticObjects)
+        </label>
+
+    </fieldset>
+    <button type="submit" class="btn btn-info"><i class="icon-search icon-white"></i> Search</button>
+}
+
+@if (ViewBag.ShowSearchResults)
+{
+    <h4>Search Results</h4>
+    
+    if (ViewBag.PagingInfo.TotalResults > 0)
+    {
+        @Html.Partial("_GridHeaderPartial", (PagingInfo)ViewBag.PagingInfo)
+    
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>@Html.SearchRouteLink("Name", RouteNames.Secure.Data, new { pageIndex = 1, pageSize = ViewBag.PagingInfo.PageSize, sortBy = "Name", sortAscending = ViewBag.NameSortAscending })</th>
+                    <th>@Html.SearchRouteLink("Type", RouteNames.Secure.Data, new { pageIndex = 1, pageSize = ViewBag.PagingInfo.PageSize, sortBy = "Type", sortAscending = ViewBag.TypeSortAscending })</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+                @foreach (var item in Model.Items) 
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Type</td>
+                        <td>@Html.ActionLink("View Details", item.Action, new { id = item.Id })</td>
+                    </tr>
+                }  
+
+            </tbody>  
+        </table>
+
+        @Html.Partial("_GridFooterPartial", (PagingInfo)ViewBag.PagingInfo)
+    }
+    else
+    {
+        <text>No results found</text>
+    }
+}

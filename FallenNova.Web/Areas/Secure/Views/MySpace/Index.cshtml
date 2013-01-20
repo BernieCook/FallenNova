@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "My Space";
+}
+
+@Html.Partial("_MySpaceHeader")
+
+<h3>Skills</h3>
+
+<button class="btn btn-info" onclick="location.href='#';"><i class="icon-refresh icon-white"></i> Refresh Skills</button>
+
+@section Scripts
+{
+    <script type="text/javascript">
+    //<![CDATA[
+
+        $(document).ready(function() {
+            $('#RefreshSkills').click(RefreshSkills());
+        });
+
+        function RefreshSkills() {
+            // Make an ajax call then update the table of skills.
+        }
+
+    //]]>
+    </script>
+}  
+

@@ -1,0 +1,133 @@
+﻿.icon-large {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    vertical-align: text-top;
+    background-image: url("/assets/images/glyphicons.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    *display: inline;
+    *zoom: 1;
+    *margin-right: .3em;
+}
+
+    /* background-position: -6px -7px; */
+
+    .icon-large.envelope {
+        background-position: 0 -44px;
+    }
+
+    .icon-large.fire {
+        background-position: -96px -92px;
+    }
+
+    .icon-large.heart {
+        background-position: -98px -43px;
+    }
+
+    .icon-large.info-sign {
+        background-position: -288px -908px;
+    }
+
+    .icon-large.list-alt {
+        background-position: -434px -141px;
+    }
+    
+    .icon-large.search {
+        background-position: -338px 96px;
+    }
+
+    .icon-large.user {
+        background-position: -146px 4px;
+    }
+
+    .icon-large.th-list {
+        background-position: -195px -524px;
+    }
+
+    .icon-large.wrench {
+        background-position: 0 -1342px;
+    }
+
+/* The following icons are the additional ones not included in the default bootstrap.cs file. */
+/* They all have a background-position-x value of "-168px". */
+.icon-dashboard {
+    background-position: 0 -168px;
+}
+
+.icon-paperclip {
+    background-position: -24px -168px;
+}
+
+.icon-heart-empty {
+    background-position: -48px -168px;
+}
+
+.icon-link {
+    background-position: -72px -168px;
+}
+
+.icon-phone {
+    background-position: -96px -168px;
+}
+
+.icon-pushpin {
+    background-position: -120px -168px;
+}
+
+.icon-euro {
+    background-position: -144px -168px;
+}
+
+.icon-usd {
+    background-position: -168px -168px;
+}
+
+.icon-gbp {
+    background-position: -192px -168px;
+}
+
+.icon-sort {
+    background-position: -216px -168px;
+}
+
+.icon-sort-by-alphabet {
+    background-position: -240px -168px;
+}
+
+.icon-sort-by-alphabet-alt {
+    background-position: -264px -168px;
+}
+
+.icon-sort-by-order {
+    background-position: -288px -168px;
+}
+
+.icon-sort-by-order-alt {
+    background-position: -313px -168px;
+}
+
+.icon-sort-by-attributes {
+    background-position: -336px -168px;
+}
+
+.icon-sort-by-attributes-alt {
+    background-position: -360px -168px;
+}
+
+.icon-unchecked {
+    background-position: -384px -168px;
+}
+
+.icon-expand {
+    background-position: -408px -168px;
+}
+
+.icon-collapse {
+    background-position: -432px -168px;
+}
+
+.icon-collapse-top {
+    background-position: -456px -168px;
+}
