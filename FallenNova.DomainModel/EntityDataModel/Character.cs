@@ -28,7 +28,6 @@ namespace FallenNova.DomainModel
         public string CharacterName { get; set; }
         public System.DateTime AddedDateTime { get; set; }
         public System.DateTime ModifiedDateTime { get; set; }
-        public byte[] Timestamp { get; set; }
     
         public virtual Corporation Corporation { get; set; }
         public virtual User User { get; set; }

@@ -36,7 +36,6 @@ namespace FallenNova.DomainModel
         public System.DateTime AddedDateTime { get; set; }
         public int ModifiedByUserId { get; set; }
         public System.DateTime ModifiedDateTime { get; set; }
-        public byte[] Timestamp { get; set; }
         public int UnsuccessfulLoginAttempts { get; set; }
         public Nullable<System.DateTime> LastSuccessfulLoginDateTime { get; set; }
         public Nullable<System.DateTime> LastSuccessfulAuthenticationDateTime { get; set; }

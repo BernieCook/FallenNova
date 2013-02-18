@@ -200,7 +200,6 @@
           <Property Name="CharacterName" Type="nvarchar" Nullable="false" MaxLength="200" />
           <Property Name="AddedDateTime" Type="datetime" Nullable="false" />
           <Property Name="ModifiedDateTime" Type="datetime" Nullable="false" />
-          <Property Name="Timestamp" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="CharacterEveOnlineSkill">
           <Key>
@@ -437,7 +436,6 @@
           <Property Name="AddedDateTime" Type="datetime" Nullable="false" />
           <Property Name="ModifiedByUserId" Type="int" Nullable="false" />
           <Property Name="ModifiedDateTime" Type="datetime" Nullable="false" />
-          <Property Name="Timestamp" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="UserLog">
           <Key>
@@ -1130,7 +1128,6 @@
           <Property Type="String" Name="CharacterName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="AddedDateTime" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="ModifiedDateTime" Nullable="false" Precision="3" />
-          <Property Type="Binary" Name="Timestamp" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="Corporation" Relationship="FallenNovaDevelopmentModel.FK_Character_Corporation" FromRole="Character" ToRole="Corporation" />
           <NavigationProperty Name="User" Relationship="FallenNovaDevelopmentModel.FK_Character_User" FromRole="Character" ToRole="User" />
           <NavigationProperty Name="KillLogs" Relationship="FallenNovaDevelopmentModel.FK_KillLog_Character" FromRole="Character" ToRole="KillLog" />
@@ -1366,7 +1363,6 @@
           <Property Type="DateTime" Name="AddedDateTime" Nullable="false" Precision="3" />
           <Property Type="Int32" Name="ModifiedByUserId" Nullable="false" />
           <Property Type="DateTime" Name="ModifiedDateTime" Nullable="false" Precision="3" />
-          <Property Type="Binary" Name="Timestamp" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="Characters" Relationship="FallenNovaDevelopmentModel.FK_Character_User" FromRole="User" ToRole="Character" />
           <NavigationProperty Name="ContactUsLogs" Relationship="FallenNovaDevelopmentModel.FK_ContactUsLog_User" FromRole="User" ToRole="ContactUsLog" />
           <NavigationProperty Name="User1" Relationship="FallenNovaDevelopmentModel.FK_User_1_AddedByUser" FromRole="User" ToRole="User1" />
@@ -1956,7 +1952,6 @@
           <EntitySetMapping Name="Characters">
             <EntityTypeMapping TypeName="FallenNovaDevelopmentModel.Character">
               <MappingFragment StoreEntitySet="Character">
-                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
                 <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
                 <ScalarProperty Name="AddedDateTime" ColumnName="AddedDateTime" />
                 <ScalarProperty Name="CharacterName" ColumnName="CharacterName" />
@@ -2164,7 +2159,6 @@
                 <ScalarProperty Name="LastSuccessfulAuthenticationDateTime" ColumnName="LastSuccessfulAuthenticationDateTime" />
                 <ScalarProperty Name="LastSuccessfulLoginDateTime" ColumnName="LastSuccessfulLoginDateTime" />
                 <ScalarProperty Name="UnsuccessfulLoginAttempts" ColumnName="UnsuccessfulLoginAttempts" />
-                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
                 <ScalarProperty Name="ModifiedDateTime" ColumnName="ModifiedDateTime" />
                 <ScalarProperty Name="ModifiedByUserId" ColumnName="ModifiedByUserId" />
                 <ScalarProperty Name="AddedDateTime" ColumnName="AddedDateTime" />

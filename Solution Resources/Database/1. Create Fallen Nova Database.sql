@@ -101,7 +101,6 @@ CREATE TABLE [dbo].[User](
 	[AddedDateTime] [datetime] NOT NULL,
 	[ModifiedByUserId] [int] NOT NULL,
 	[ModifiedDateTime] [datetime] NOT NULL,
-	[Timestamp] [timestamp] NOT NULL,
  CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
 (
 	[UserId] ASC
@@ -344,7 +343,6 @@ CREATE TABLE [dbo].[Character](
 	[CharacterName] [nvarchar](200) NOT NULL,
 	[AddedDateTime] [datetime] NOT NULL,
 	[ModifiedDateTime] [datetime] NOT NULL,
-	[Timestamp] [timestamp] NOT NULL,
  CONSTRAINT [PK_Character] PRIMARY KEY CLUSTERED 
 (
 	[CharacterId] ASC
